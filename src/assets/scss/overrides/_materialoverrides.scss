@@ -1,0 +1,91 @@
+
+.light-theme .blue_theme,
+.light-theme .purple_theme,
+.light-theme .orange_theme,
+.light-theme .green_theme,
+.light-theme .aqua_theme,
+.light-theme .cyan_theme,
+.dark-theme {
+  @import "./buttons";
+  @import "./drawer";
+  @import "./form";
+  @import "./checkbox";
+  @import "./radio";
+
+  .topbar {
+    background-color: $toolbar;
+  }
+}
+
+.light-theme,
+.dark-theme {
+  @import "./card";
+  @import "./typography";
+}
+
+@import "./borderColor";
+@import "./table";
+
+@import "./list";
+
+.ng-select .ng-select-container .ng-value-container {
+  align-items: stretch;
+  padding: 0.3375em 0; /* Increased padding-bottom */
+  border-top: 1.34375em solid transparent;
+}
+.ng-select .ng-has-value .ng-placeholder, .ng-select.ng-select-opened .ng-placeholder {
+  transform: translateY(-1.625em) scale(0.75) perspective(100px) translateZ(0.001px) !important;
+}
+
+
+.ng-select.ng-select-focused .ng-select-container + .floating-placeholder {  
+  background: white !important;
+  display: block;
+  z-index: 1;
+}
+
+.mat-form-field {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.ng-select-wrapper {
+  position: relative;
+}
+.ng-select-wrapper.empty .floating-placeholder {
+  color: grey; /* Grey color when the field is empty */
+}
+
+.ng-select-placeholder-float .ng-select-container {
+  padding-top: 1.5rem; /* Create space for the floating label */
+}
+
+
+/* Floating label style */
+.floating-placeholder {
+  position: absolute;
+  top: -0.18rem;
+  left: 0.35rem;
+  font-size: 0.65rem; /* Use Material UI variable */
+  background: white !important;
+  color: grey; /* Grey color when input is not active */
+  padding: 0 0.25rem;
+  pointer-events: none;
+  z-index: 9999;
+  transition: color 0.2s ease-in-out;
+    /* display: none; Initially hidden */
+}
+
+/* Active state - when the ng-select is focused or opened */
+.ng-select.ng-select-focused .ng-select-container + .floating-placeholder,
+.ng-select.ng-select-opened .ng-select-container + .floating-placeholder,
+.ng-select-wrapper .ng-select-container.ng-select-focused + .floating-placeholder,
+.ng-select-wrapper .ng-select-container.ng-select-opened + .floating-placeholder {
+  color: #5d87ff !important; /* Blue color when active */
+}
+
+
+.mat-mdc-form-field-hint-wrapper, .mat-mdc-form-field-error-wrapper{
+  position: inherit !important;
+  top: -15px !important;
+}

@@ -1,0 +1,43 @@
+:host {
+  display: block;
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.invoice-details p {
+  margin: 5px 0;
+}
+
+.invoice-details-grid {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 10px 20px; /* Espacio entre columnas y filas */
+  text-align: left;
+}
+
+.invoice-details-grid div {
+  padding: 5px 0;
+}

@@ -1,0 +1,15 @@
+<div class="container-messages-leads" >
+    <div class="container-comment" style="flex: 1; overflow-y: auto;">
+        @for(messages of messageThreads; track messages){
+            <app-message-thread (messageReply)="onMessage($event)" [messageThread]="messages"></app-message-thread>
+        }
+    </div>
+
+    <form class="d-flex align-items-center m-y-12 m-l-8" (ngSubmit)="newThread()" style="margin-top: auto;">
+        <mat-form-field appearance="outline" class="w-100 hide-hint m-l-8">
+            <input matInput placeholder="Nuevo Mensaje" [(ngModel)]="messageText" name="messageText" />
+        </mat-form-field>
+        <hr>
+        <button type="submit" mat-flat-button color="primary" class="m-l-8">Publicar</button>
+    </form>
+</div>

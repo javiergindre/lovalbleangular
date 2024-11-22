@@ -1,0 +1,53 @@
+<!-- ============================================================== -->
+<!-- Simple four boxes Row -->
+<!-- ============================================================== -->
+<mat-card class="mat-elevation-z10">
+  <mat-card-content>
+    <div class="d-sm-flex align-center justify-space-between">
+      <div>
+        <mat-card-title class="text-h5">Documentación</mat-card-title>
+        <mat-card-subtitle class="text-subtitle-1 textSecondary"
+          >En formato pdf</mat-card-subtitle
+        >
+      </div>
+    </div>
+
+    @if(isLoading){
+    <div class="d-flex justify-content-center">
+      <mat-spinner mode="indeterminate"> </mat-spinner>
+    </div>
+    }@else{
+    <table mat-table [dataSource]="topDocuments" class="month-table mt-12">
+      <ng-container matColumnDef="name">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          class="text-subtitle-1 textPrimary font-weight-semibold"
+        >
+          Archivos
+        </th>
+        <td mat-cell *matCellDef="let item" class="month-item">
+          <div class="d-flex align-center align-items-center">
+            <a mat-icon-button target="_blank" [href]="item.fileUrl">
+              <mat-icon aria-hidden="false" aria-label="PDF icon">
+                <img [src]="item.img" [alt]="item.img" width="40" />
+              </mat-icon>
+            </a>
+
+            <div class="mx-3">
+              <a target="_blank" [href]="item.fileUrl">
+                <h4 class="text-subtitle-1 text-no-wrap font-weight-semibold">
+                  {{ item.name }}
+                </h4>
+              </a>
+            </div>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="['name']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['name']"></tr>
+    </table>
+    }
+  </mat-card-content>
+</mat-card>

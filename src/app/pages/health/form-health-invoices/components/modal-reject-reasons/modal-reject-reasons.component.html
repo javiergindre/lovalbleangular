@@ -1,0 +1,75 @@
+<h2 mat-dialog-title>Razones de rechazo</h2>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-dialog-content class="inputs-container">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Razón de rechazo</mat-label>
+      <input
+        type="text"
+        placeholder="Seleccione una razón"
+        matInput
+        formControlName="reason"
+        [matAutocomplete]="auto"
+      />
+      <button
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="clearInput()"
+        *ngIf="form.get('reason')?.value"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option
+          *ngFor="let option of filteredOptions | async"
+          [value]="option"
+          >{{ option.rejectReason }}</mat-option
+        >
+      </mat-autocomplete>
+
+      <mat-error
+        *ngIf="
+          form.get('reason')?.hasError('incorrect') &&
+          form.get('reason')?.touched
+        "
+      >
+        Por favor seleccione una opción válida.
+      </mat-error>
+    </mat-form-field>
+
+    <div class="checkbox-group">
+      <mat-checkbox formControlName="requiresCreditNote"
+        >Requiere nota de crédito</mat-checkbox
+      >
+      <mat-checkbox formControlName="incomplete">Incompleta</mat-checkbox>
+    </div>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Comentarios adicionales</mat-label>
+      <textarea matInput formControlName="comments" rows="3"></textarea>
+
+      <mat-error
+        *ngIf="
+          form.get('comments')?.hasError('required') &&
+          form.get('comments')?.touched
+        "
+      >
+        Este campo es obligatorio.
+      </mat-error>
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button (click)="onCancel()">Cancelar</button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!form.valid"
+    >
+      Enviar
+    </button>
+  </mat-dialog-actions>
+</form>

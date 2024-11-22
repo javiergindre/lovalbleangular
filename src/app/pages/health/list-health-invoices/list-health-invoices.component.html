@@ -1,0 +1,129 @@
+<!-- template listado de facturas -->
+
+<mat-card class="cardWithShadow">
+  <mat-card-content class="p-24">
+    <div class="row justify-content-between">
+      <div class="col-lg-4">
+        <mat-form-field appearance="outline" class="w-100 hide-hint">
+          <input
+            matInput
+            placeholder="Buscar por afiliado"
+            [(ngModel)]="filter.affiliateName"
+            (keyup.enter)="onSearch()"
+          />
+          <mat-icon matSuffix>
+            <i-tabler name="search" class="icon-20"></i-tabler>
+          </mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="col-lg-4 d-flex align-items-center justify-content-end">
+        <button mat-button color="warn" class="m-r-10" (click)="clearFilters()">
+          Limpiar filtros
+        </button>
+        <button
+          mat-stroked-button
+          color="primary"
+          (click)="onSearch()"
+          class="mr-2"
+        >
+          Buscar
+        </button>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-accordion>
+    <mat-expansion-panel #expansionPanel class="shadow-none">
+      <mat-expansion-panel-header>
+        <mat-panel-description class="mat-body-1">
+          <i-tabler name="adjustments-alt" class="icon-20 m-r-12"></i-tabler>
+          Filtros avanzados
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div class="row mb-3">
+        <div class="col-6 col-md-3">
+          <mat-form-field appearance="outline" color="primary" class="w-100">
+            <mat-label>Prestador</mat-label>
+            <input
+              matInput
+              [(ngModel)]="filter.providerName"
+              (keyup.enter)="onSearch()"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-6 col-md-3">
+          <mat-form-field appearance="outline" color="primary" class="w-100">
+            <mat-label>Periodo</mat-label>
+            <input
+              matInput
+              [(ngModel)]="filter.invoicePeriod"
+              (keyup.enter)="onSearch()"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-6 col-md-3">
+          <mat-form-field appearance="outline" color="primary" class="w-100">
+            <mat-label>Comprobante</mat-label>
+            <input
+              matInput
+              [(ngModel)]="filter.invoiceNumber"
+              (keyup.enter)="onSearch()"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-6 col-md-3">
+          <mat-form-field appearance="outline" color="primary" class="w-100">
+            <mat-label>DNI</mat-label>
+            <input
+              matInput
+              [(ngModel)]="filter.affiliateCode"
+              (keyup.enter)="onSearch()"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-card>
+
+<app-generic-pagination-table
+  [data$]="filteredData$"
+  [isLoading$]="isLoading$"
+  [columns]="columns"
+  title="Lista de facturas"
+  subtitle=""
+  [expandable]="true"
+  [tabOptions]="tabOptions"
+  [selectedTabIndex]="this.initialTab"
+  [userRole]="isProvider ? 'provider' : 'non-provider'"
+  (pageChange)="onPageChange($event)"
+  (tabChange)="onTabChange($event)"
+  (edit)="onEdit($event)"
+  (create)="onCreate($event)"
+  (confirm)="onConfirm($event)"
+  (signature)="onSignature($event)"
+  (download)="onDownload($event)"
+  [createRoute]="'health/invoices/load'"
+  [showCreateButton]="isProvider"
+  (customAction)="onCustomAction($event)"
+  (viewAction)="onViewAction($event)"
+>
+  <ng-template #expandedContent let-element>
+    <p>Motivo de rechazo: {{ element.comments }}</p>
+
+    @if (showBackToApprovalButton()){
+    <button
+      mat-stroked-button
+      color="primary"
+      (click)="onBackToApproval(element.guid)"
+      class="mr-2"
+    >
+      Pasar a Aprobación
+    </button>
+    }
+  </ng-template>
+</app-generic-pagination-table>
+
+<ng-template>
+  <app-signature></app-signature>
+</ng-template>

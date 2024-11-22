@@ -1,0 +1,103 @@
+.select-custom{
+    margin: 2vh;
+    margin-top: 3vh;
+  
+  }
+  
+  .w-50{
+      width: 35%;
+      height: 100%;
+      margin-left: 5vw;
+  }
+  
+  .container-comment{
+      width: 65%;
+      padding: 0%;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+  
+  }
+  
+  .container-data{
+      display: flex;
+      flex-direction: row;
+      justify-content: center !important;
+      align-items: center !important;
+  }
+  
+  
+  .container-tabs{
+      display: flex;
+      flex-direction: row;
+  }
+  
+  
+  .custom-menu {
+      background-color: #f5f5f5;
+      color: #333;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      padding: 8px 0;
+    }
+    
+    .custom-menu-item {
+      font-size: 14px;
+      padding: 12px 16px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .custom-menu-item:hover {
+      background-color: #e0e0e0;
+    }
+    
+    .custom-menu-item-reject {
+      color: #ff5252;
+      font-weight: bold;
+      padding: 12px 16px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .custom-menu-item-reject:hover {
+      background-color: #ffcdd2;
+    }
+  
+  .custom-menu-item-divider {
+      height: 1px;
+      background-color: #e0e0e0;
+      margin: 8px 0;
+    }
+  
+    .action-button {
+      background-color: #4285f4; /* Color azul de Google, puedes cambiarlo por el que uses en tu aplicación */
+      color: white;
+      padding: 0 8px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      border-radius: 4px;
+    }
+    
+    .action-button:hover {
+      background-color: #3367d6; /* Un tono más oscuro para el hover */
+    }
+    
+    .action-button span {
+      padding: 0 8px;
+    }
+    
+    .action-button .divider {
+      height: 24px;
+      width: 1px;
+      background-color: rgba(255, 255, 255, 0.3);
+      margin: 0 4px;
+    }
+    
+    .action-button mat-icon {
+      margin-left: 4px;
+      font-size: 20px;
+      height: 20px;
+      width: 20px;
+      display: flex;
+      align-items: center;
+    }

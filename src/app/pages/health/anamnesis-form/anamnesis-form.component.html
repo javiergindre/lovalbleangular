@@ -1,0 +1,9 @@
+@if(!isLoading){
+<div class="d-flex justify-content-end">
+  <button mat-flat-button color="accent" (click)="downloadReport()">
+    Crear informe
+  </button>
+</div>
+}
+
+<app-dynamic-form [config$]="config$"></app-dynamic-form>

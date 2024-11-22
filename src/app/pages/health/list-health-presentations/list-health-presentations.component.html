@@ -1,0 +1,102 @@
+<mat-card class="cardWithShadow">
+  <mat-card-content>
+    <form [formGroup]="searchForm">
+      <div class="row">
+        <div class="col-6">
+          <app-lookup
+            [config]="healthServiceIdLookupConfig"
+            [formGroup]="searchForm"
+            formControlName="healthServiceId"
+          ></app-lookup>
+        </div>
+
+        <div class="col-4">
+          <div class="row">
+            <mat-form-field appearance="outline" class="col-6">
+              <mat-label>Fecha desde</mat-label>
+              <input
+                matInput
+                [matDatepicker]="picker1"
+                [(ngModel)]="filter.dateFrom"
+                formControlName="dateFrom"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker1"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="col-6">
+              <mat-label>Fecha hasta</mat-label>
+              <input
+                matInput
+                [matDatepicker]="picker2"
+                [(ngModel)]="filter.dateTo"
+                formControlName="dateTo"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker2"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+            <!-- @if(dateHasError){
+            <div class="col-12">
+              <mat-error class="text-danger">
+                {{ dateHasError }}
+              </mat-error>
+            </div>
+            } -->
+          </div>
+        </div>
+
+        <div class="col-2 d-flex align-items-center justify-content-end">
+          <button
+            mat-button
+            color="warn"
+            class="m-r-10"
+            (click)="clearFilters()"
+          >
+            Limpiar filtros
+          </button>
+          <button
+            mat-stroked-button
+            color="primary"
+            (click)="onSearch()"
+            class="mr-2"
+          >
+            Buscar
+          </button>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<app-generic-pagination-table
+  [data$]="filteredData$"
+  [isLoading$]="isLoading$"
+  [columns]="columns"
+  title="Lista de presentaciones"
+  subtitle=""
+  [expandable]="true"
+  [tabOptions]="tabOptions"
+  [selectedTabIndex]="this.initialTab"
+  (pageChange)="onPageChange($event)"
+  (tabChange)="onTabChange($event)"
+  [createRoute]="'health/presentations/create'"
+>
+  <ng-template #expandedContent let-element>
+    <div>
+      <button
+        mat-button
+        color="accent"
+        class="m-r-10"
+        (click)="goToPresentation(element)"
+      >
+        Ver presentación
+      </button>
+    </div>
+  </ng-template>
+</app-generic-pagination-table>

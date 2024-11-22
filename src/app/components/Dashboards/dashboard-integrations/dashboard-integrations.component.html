@@ -1,0 +1,36 @@
+<div>
+
+        <div class="select-container">
+            <!-- Date Picker From -->
+            <ng-select [items]="months" bindLabel="text" bindValue="value" [(ngModel)]="selectedMonth">
+                <ng-template ng-option-tmp let-item="item">
+                {{ item.text }} 
+                </ng-template>
+            </ng-select>
+            
+            <ng-select [items]="years" bindLabel="text" bindValue="value" [(ngModel)]="selectedYear">
+                <ng-template ng-option-tmp let-item="item">
+                {{ item.text }} 
+                </ng-template>
+            </ng-select>
+            <!-- Health Services Lookup -->
+            <form  [formGroup]="healthServiceForm">
+                <app-lookup
+                    [config]="healthServiceIdLookupConfig"
+                    [formGroup]="healthServiceForm"
+                    formControlName="HealthServiceId"
+                    (onSelect)="onHealthServiceChange($event)"
+                    ></app-lookup>
+            </form>
+            <button class="search-btn mat-icon-button"  (click)="updateDataCharts()">
+                <mat-icon class="">search</mat-icon>
+            </button>
+        </div>
+
+</div>
+
+<div class="chart-container">
+    @if(this.statisticsForColumnChart){
+        <chart-column [title]="titleChartColumn" [columnChartOptions]="this.statisticsForColumnChart"></chart-column>
+    }
+</div>

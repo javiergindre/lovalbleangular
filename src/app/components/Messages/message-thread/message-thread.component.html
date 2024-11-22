@@ -1,0 +1,9 @@
+<div>
+    <!-- Mensaje Principal -->
+    <app-comment 
+        [message]="messageThread.mainMessage" 
+        [isFirst]="true" 
+        (messageReply)="onMessage($event)">
+    </app-comment>
+
+</div>

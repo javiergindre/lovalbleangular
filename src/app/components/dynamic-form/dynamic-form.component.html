@@ -1,0 +1,501 @@
+@if(isLoading){
+<div
+  class="d-flex justify-content-center align-items-center"
+  style="height: 30vh"
+>
+  <mat-spinner diameter="100"></mat-spinner>
+</div>
+} @else {
+
+<h2>{{ formHeader }}</h2>
+<div [formGroup]="form">
+  <!-- Si hay más de un step, mostramos el stepper -->
+  <ng-container *ngIf="steps.length > 1; else singleStep">
+    <!-- Si es un wizard horizontal -->
+    <ng-container *ngIf="stepType === 0">
+      <mat-horizontal-stepper [linear]="true" [selectedIndex]="currentStep">
+        <ng-container *ngFor="let step of steps; let i = index">
+          <mat-step [stepControl]="form" [completed]="isStepValid(i)">
+            <ng-template matStepLabel>{{ step.title }}</ng-template>
+            <ng-container
+              *ngTemplateOutlet="formGroups; context: { step: step }"
+            ></ng-container>
+
+            <!-- Si hay substeps, renderizarlos aquí -->
+            <ng-container *ngIf="step.subSteps && step.subSteps.length > 0">
+              <mat-horizontal-stepper
+                [linear]="true"
+                [(selectedIndex)]="currentSubStep"
+              >
+                <ng-container
+                  *ngFor="let subStep of step.subSteps; let j = index"
+                >
+                  <mat-step
+                    [stepControl]="form"
+                    [completed]="isSubStepValid(j)"
+                  >
+                    <ng-template matStepLabel>{{ subStep.title }}</ng-template>
+                    <ng-container
+                      *ngTemplateOutlet="formGroups; context: { step: subStep }"
+                    ></ng-container>
+                    <!-- Botones de navegación para los substeps -->
+                    <div class="d-flex justify-content-between mt-3">
+                      <button
+                        mat-button
+                        *ngIf="j > 0"
+                        (click)="previousSubStep()"
+                      >
+                        Anterior
+                      </button>
+
+                      <!-- Botón siguiente en el último substep avanza al siguiente step principal -->
+                      <button
+                        mat-button
+                        *ngIf="j < step.subSteps.length - 1"
+                        (click)="nextSubStep()"
+                        [disabled]="!isSubStepValid(j)"
+                      >
+                        Siguiente
+                      </button>
+                    </div>
+                  </mat-step>
+                </ng-container>
+              </mat-horizontal-stepper>
+            </ng-container>
+
+            <!-- Botones de navegación -->
+            <div class="d-flex justify-content-between mt-3">
+              <button mat-button *ngIf="i > 0" (click)="previousStep()">
+                Anterior
+              </button>
+              <button
+                mat-button
+                *ngIf="i < steps.length - 1"
+                (click)="nextStep()"
+                [disabled]="!isStepValid(i)"
+              >
+                Siguiente
+              </button>
+              <button
+                mat-button
+                *ngIf="i === steps.length - 1"
+                (click)="onSubmit()"
+                [disabled]="!form.valid"
+              >
+                {{ formSubmitButton }}
+              </button>
+            </div>
+          </mat-step>
+        </ng-container>
+      </mat-horizontal-stepper>
+    </ng-container>
+
+    <!-- Si es un wizard vertical -->
+    <ng-container *ngIf="stepType === 1">
+      <mat-vertical-stepper [linear]="true" [selectedIndex]="currentStep">
+        <ng-container *ngFor="let step of steps; let i = index">
+          <mat-step [stepControl]="form" [completed]="isStepValid(i)">
+            <ng-template matStepLabel>{{ step.title }}</ng-template>
+            <ng-container
+              *ngTemplateOutlet="formGroups; context: { step: step }"
+            ></ng-container>
+
+            <!-- Si hay substeps, renderizarlos aquí -->
+            <ng-container *ngIf="step.subSteps && step.subSteps.length > 0">
+              <mat-vertical-stepper
+                [linear]="true"
+                [(selectedIndex)]="currentSubStep"
+              >
+                <ng-container
+                  *ngFor="let subStep of step.subSteps; let j = index"
+                >
+                  <mat-step [stepControl]="form" [completed]="isStepValid(j)">
+                    <ng-template matStepLabel>{{ subStep.title }}</ng-template>
+                    <ng-container
+                      *ngTemplateOutlet="formGroups; context: { step: subStep }"
+                    ></ng-container>
+                  </mat-step>
+                </ng-container>
+              </mat-vertical-stepper>
+            </ng-container>
+
+            <!-- Botones de navegación -->
+            <div class="d-flex justify-content-between mt-3">
+              <button mat-button *ngIf="i > 0" (click)="previousStep()">
+                Anterior
+              </button>
+              <button
+                mat-button
+                *ngIf="i < steps.length - 1"
+                (click)="nextStep()"
+                [disabled]="!isStepValid(i)"
+              >
+                Siguiente
+              </button>
+              <button
+                mat-button
+                *ngIf="i === steps.length - 1"
+                (click)="onSubmit()"
+                [disabled]="!form.valid"
+              >
+                {{ formSubmitButton }}
+              </button>
+            </div>
+          </mat-step>
+        </ng-container>
+      </mat-vertical-stepper>
+    </ng-container>
+
+    <!-- Si es un accordion -->
+    <ng-container *ngIf="stepType === 2">
+      <mat-accordion>
+        <ng-container *ngFor="let step of steps; let i = index">
+          <mat-expansion-panel
+            [expanded]="currentStep === i"
+            (opened)="onStepOpened(i)"
+          >
+            <mat-expansion-panel-header>{{
+              step.title
+            }}</mat-expansion-panel-header>
+            <ng-container
+              *ngTemplateOutlet="formGroups; context: { step: step }"
+            ></ng-container>
+
+            <!-- Si hay substeps, renderizarlos aquí -->
+            <ng-container *ngIf="step.subSteps && step.subSteps.length > 0">
+              <mat-accordion>
+                <ng-container
+                  *ngFor="let subStep of step.subSteps; let j = index"
+                >
+                  <mat-expansion-panel
+                    [expanded]="currentSubStep === j"
+                    (opened)="onSubStepOpened(j)"
+                  >
+                    <mat-expansion-panel-header>{{
+                      subStep.title
+                    }}</mat-expansion-panel-header>
+                    <ng-container
+                      *ngTemplateOutlet="formGroups; context: { step: subStep }"
+                    ></ng-container>
+                    <!-- Botones de navegación para los substeps -->
+                    <mat-action-row>
+                      <button
+                        mat-stroked-button
+                        color="warn"
+                        *ngIf="j > 0"
+                        (click)="previousSubStep()"
+                      >
+                        Anterior
+                      </button>
+
+                      <!-- Botón siguiente en el último substep avanza al siguiente step principal -->
+                      <button
+                        mat-stroked-button
+                        color="primary"
+                        [disabled]="!isSubStepValid(j)"
+                        *ngIf="j < step.subSteps.length - 1"
+                        (click)="nextSubStep()"
+                      >
+                        Siguiente
+                      </button>
+                    </mat-action-row>
+                  </mat-expansion-panel>
+                </ng-container>
+              </mat-accordion>
+            </ng-container>
+
+            <!-- Controles de navegación -->
+
+            <mat-action-row>
+              <button
+                mat-flat-button
+                color="warn"
+                *ngIf="i > 0"
+                (click)="previousStep()"
+              >
+                Anterior
+              </button>
+              <button
+                [disabled]="!isStepValid(i)"
+                mat-flat-button
+                color="primary"
+                *ngIf="i < steps.length - 1"
+                (click)="nextStep()"
+              >
+                Continuar
+              </button>
+              <button
+                mat-flat-button
+                color="primary"
+                *ngIf="i === steps.length - 1"
+                (click)="onSubmit()"
+                [disabled]="!form.valid"
+              >
+                {{ formSubmitButton }}
+              </button>
+            </mat-action-row>
+          </mat-expansion-panel>
+        </ng-container>
+      </mat-accordion>
+    </ng-container>
+
+    <!-- Si son tabs -->
+    <ng-container *ngIf="stepType === 3">
+      <mat-tab-group>
+        <ng-container *ngFor="let step of steps; let i = index">
+          <mat-tab label="{{ step.title }}">
+            <ng-container
+              *ngTemplateOutlet="formGroups; context: { step: step }"
+            ></ng-container>
+
+            <!-- Si hay substeps, renderizarlos aquí -->
+            <ng-container *ngIf="step.subSteps && step.subSteps.length > 0">
+              <mat-tab-group>
+                <ng-container
+                  *ngFor="let subStep of step.subSteps; let j = index"
+                >
+                  <mat-tab label="{{ subStep.title }}">
+                    <ng-container
+                      *ngTemplateOutlet="formGroups; context: { step: subStep }"
+                    ></ng-container>
+                  </mat-tab>
+                </ng-container>
+              </mat-tab-group>
+            </ng-container>
+
+            <!-- Controles de navegación -->
+            <div class="d-flex justify-content-between mt-3">
+              <button mat-button *ngIf="i > 0" (click)="previousStep()">
+                Anterior
+              </button>
+              <button
+                mat-button
+                *ngIf="i < steps.length - 1"
+                (click)="nextStep()"
+              >
+                Siguiente
+              </button>
+              <button
+                mat-button
+                *ngIf="i === steps.length - 1"
+                (click)="onSubmit()"
+                [disabled]="!form.valid"
+              >
+                {{ formSubmitButton }}
+              </button>
+            </div>
+          </mat-tab>
+        </ng-container>
+      </mat-tab-group>
+    </ng-container>
+  </ng-container>
+
+  <!-- Si hay un solo step, mostramos el formulario sin stepper -->
+  <ng-template #singleStep>
+    <div class="col-12">
+      <h2>{{ steps[0].title }}</h2>
+    </div>
+    <ng-container
+      *ngTemplateOutlet="formGroups; context: { step: steps[0] }"
+    ></ng-container>
+    <div class="d-flex justify-content-end mt-3">
+      <button mat-button (click)="onSubmit()" [disabled]="!form.valid">
+        {{ formSubmitButton }}
+      </button>
+    </div>
+  </ng-template>
+
+  <!-- Plantilla reutilizable para los grupos y filas -->
+  <ng-template #formGroups let-step="step">
+    <div class="container">
+      <div class="row" *ngFor="let group of step.groups">
+        <div class="container w-100">
+          <div class="col-12">
+            <h3 *ngIf="group.groupName">{{ group.groupName }}</h3>
+          </div>
+          <div class="row" *ngFor="let row of group.rows">
+            <div *ngFor="let field of row.fields" [ngClass]="field.cssClass">
+              <!-- Text field -->
+              <mat-form-field
+                *ngIf="field.type === 'text'"
+                appearance="outline"
+                class="w-100"
+              >
+                <mat-label>{{ field.label }}</mat-label>
+                <input
+                  matInput
+                  [formControlName]="field.name"
+                  [matTooltip]="field.tooltip"
+                />
+                <span
+                  matTextSuffix
+                  *ngIf="field.suffix && form.get(field.name)?.value"
+                  >{{ field.suffix }}</span
+                >
+                <mat-error *ngFor="let error of getTemplateErrors(field.name)">
+                  {{ getError(field.name, field.label) }}
+                </mat-error>
+              </mat-form-field>
+
+              <!-- Hidden field -->
+              <mat-form-field
+                *ngIf="field.type === 'hidden'"
+                appearance="outline"
+                class="w-100 d-none"
+              >
+                <mat-label>{{ field.label }}</mat-label>
+                <input
+                  matInput
+                  [formControlName]="field.name"
+                  [matTooltip]="field.tooltip"
+                />
+                <span
+                  matTextSuffix
+                  *ngIf="field.suffix && form.get(field.name)?.value"
+                  >{{ field.suffix }}</span
+                >
+                <mat-error *ngFor="let error of getTemplateErrors(field.name)">
+                  {{ getError(field.name, field.label) }}
+                </mat-error>
+              </mat-form-field>
+              <!-- Email field -->
+              <mat-form-field
+                *ngIf="field.type === 'email'"
+                appearance="outline"
+                class="w-100"
+              >
+                <mat-label>{{ field.label }}</mat-label>
+                <input matInput [formControlName]="field.name" type="email" />
+                <mat-error *ngFor="let error of getTemplateErrors(field.name)">
+                  {{ getError(field.name, field.label) }}
+                </mat-error>
+              </mat-form-field>
+
+              <!-- Number field -->
+              <mat-form-field
+                *ngIf="field.type === 'number'"
+                appearance="outline"
+                class="w-100"
+              >
+                <mat-label>{{ field.label }}</mat-label>
+                <input matInput type="number" [formControlName]="field.name" />
+                <span
+                  matTextSuffix
+                  *ngIf="field.suffix && form.get(field.name)?.value"
+                  >{{ field.suffix }}</span
+                >
+                <mat-error *ngFor="let error of getTemplateErrors(field.name)">
+                  {{ getError(field.name, field.label) }}
+                </mat-error>
+              </mat-form-field>
+
+              <!-- Date field -->
+              <mat-form-field
+                *ngIf="field.type === 'date'"
+                appearance="outline"
+                class="w-100"
+              >
+                <mat-label>{{ field.label }}</mat-label>
+                <input
+                  matInput
+                  [matDatepicker]="picker"
+                  [formControlName]="field.name"
+                  [matTooltip]="field.tooltip"
+                />
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="picker"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngFor="let error of getTemplateErrors(field.name)">
+                  {{ getError(field.name, field.label) }}
+                </mat-error>
+              </mat-form-field>
+              <!-- Autocomplete field -->
+              <mat-form-field
+                *ngIf="field.type === 'autocomplete'"
+                appearance="outline"
+                class="w-100"
+              >
+                <mat-label>{{ field.label }}</mat-label>
+                <input
+                  matInput
+                  [formControlName]="field.name"
+                  [matAutocomplete]="auto"
+                />
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let option of []" [value]="option">{{
+                    option
+                  }}</mat-option>
+                </mat-autocomplete>
+                <mat-error
+                  *ngIf="
+                    form.get(field.name)?.touched &&
+                    form.get(field.name)?.invalid
+                  "
+                >
+                  {{ getError(field.name, field.label) }}
+                </mat-error>
+              </mat-form-field>
+
+              <!-- Checkbox field-->
+              <ng-container *ngIf="field.type === 'checkbox'">
+                <div class="checkbox-container">
+                  <mat-checkbox [formControlName]="field.name">
+                    {{ field.label }}
+                  </mat-checkbox>
+                  <mat-error
+                    *ngFor="let error of getTemplateErrors(field.name)"
+                  >
+                    {{ getError(field.name, field.label) }}
+                  </mat-error>
+                </div>
+              </ng-container>
+
+              <!-- Select Field-->
+              <mat-form-field
+                *ngIf="field.type === 'select'"
+                appearance="outline"
+                class="w-100"
+              >
+                <mat-label>{{ field.label }}</mat-label>
+                <mat-select
+                  [formControlName]="field.name"
+                  [matTooltip]="field.tooltip"
+                >
+                  <mat-option
+                    *ngFor="let option of field.options"
+                    [value]="option.value"
+                  >
+                    {{ option.label }}
+                  </mat-option>
+                </mat-select>
+
+                <!-- Botón para limpiar la selección -->
+                <button
+                  mat-icon-button
+                  matSuffix
+                  *ngIf="form.get(field.name)?.value"
+                  (click)="clearSelection(field.name)"
+                >
+                  <mat-icon>close</mat-icon>
+                </button>
+
+                <mat-error *ngFor="let error of getTemplateErrors(field.name)">
+                  {{ getError(field.name, field.label) }}
+                </mat-error>
+              </mat-form-field>
+
+              <!-- Componente dinámico -->
+              <ng-container
+                *ngIf="field.type === 'dynamic'"
+                #dynamicComponentContainer
+              ></ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+}

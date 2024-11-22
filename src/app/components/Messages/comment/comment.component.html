@@ -1,0 +1,46 @@
+@if(message)
+{
+
+  <div [ngClass]="{'bg-light m-t-12 m-l-64': isAnswer, 'border-left m-l-64': !isAnswer}" class="rounded p-12">
+      <div class="d-flex align-items-center">
+        <div class="rounded-circle">
+            <b class="f-s-2 m-0">{{ this.getInitials(message.senderUserName) }}</b>
+        </div>
+        
+          <span class="small-letter  m-l-8">{{message.senderUserName}}</span>
+          <span class="m-l-8 f-s-12 d-flex align-items-center">
+              <i-tabler class="icon-7 op-5 d-flex m-r-4" name="circle-filled"></i-tabler>
+              {{calculateTimeAgo(message.createDate) }} - {{ message.createDate | date: 'MMM d, y' }}
+          </span>
+      </div>
+      <div class="flex align-items-center">
+        <p class="text-letter m-t-8 inline-text">{{message.body}}</p>
+        
+        <button mat-mini-fab color="primary" class="icon-15 m-l-5" matTooltip="Reply" (click)="toggleReply()">
+            <i-tabler name="arrow-back-up" class="icon-10"></i-tabler>
+        </button>
+    </div>
+
+      <div [hidden]="istoggleReply">
+          <form class="d-flex align-items-center" (ngSubmit)="reply()">
+            
+            <div class="rounded-circle">
+                <b class="f-s-2 m-0">{{ this.getInitialsCurrentUser() }}</b>
+            </div>
+              <mat-form-field appearance="outline"  style="width: 80%;" class="hide-hint ">
+                  <input matInput placeholder="Reply" [(ngModel)]="replyText" name="replyText" required />
+              </mat-form-field>
+              <button type="submit" mat-flat-button color="primary" class="m-l-8">Contestar</button>
+          </form>
+      </div>
+      <!-- LLamo al mismo componente para pasar las repsuestas de cada comentario -->
+      <div *ngFor="let reply of message.replies">
+        <app-comment 
+              [message]="reply" 
+              [isFirst]="false" 
+              [isAnswer]="true" 
+              (messageReply)="onMessage($event)">
+          </app-comment>
+      </div>
+  </div>
+}

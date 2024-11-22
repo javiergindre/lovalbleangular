@@ -1,0 +1,131 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="mt-5"> <!-- Contenedor más ancho -->
+      <mat-card class="cardWithShadow theme-card">
+            <br> <br>
+        <mat-card-content class="b-t-1 p-4">
+          <!-- Fecha y Hora -->
+          <div class="row mb-5"> <!-- Más espacio entre secciones -->
+            <div class="col-md-6">
+              <mat-label class="mat-subtitle-2 f-w-600 d-block mb-3">Fecha</mat-label>
+              <mat-form-field appearance="outline" class="w-100">
+                <input 
+                  matInput 
+                  [matDatepicker]="schedulePicker" 
+                  [min]="minDate"  
+                  placeholder="Fecha" 
+                  [(ngModel)]="inputEvent.date"
+                  [readonly]="true" 
+                />
+                <mat-datepicker-toggle matIconSuffix [for]="schedulePicker"></mat-datepicker-toggle>
+                <mat-datepicker #schedulePicker></mat-datepicker>
+              </mat-form-field>
+            </div>
+            
+            <div class="col-md-6">
+              <mat-label class="mat-subtitle-2 f-w-600 d-block mb-3">Hora</mat-label>
+              <mat-form-field appearance="outline" class="w-100">
+                <input 
+                  matInput 
+                  placeholder="Hora" 
+                  [(ngModel)]="inputEvent.time" 
+                  type="time" 
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!-- Título -->
+          <div class="row mb-5">
+            <div class="col-12">
+              <mat-label class="mat-subtitle-2 f-w-600 d-block mb-3">Título</mat-label>
+              <mat-form-field appearance="outline" class="w-100">
+                <input 
+                  matInput 
+                  [(ngModel)]="inputEvent.title" 
+                  placeholder="Título del evento" 
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!-- Descripción -->
+          <div class="row mb-5">
+            <div class="col-12">
+              <mat-label class="mat-subtitle-2 f-w-600 d-block mb-3">Descripción</mat-label>
+              <mat-form-field appearance="outline" class="w-100">
+                <textarea 
+                  matInput 
+                  [(ngModel)]="inputEvent.description" 
+                  placeholder="Descripción del evento"
+                  rows="4" 
+                ></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!-- Calendario -->
+          <div class="row mb-5">
+            <div class="col-12">
+              <div class="d-flex align-items-center gap-4"> <!-- Más espacio entre elementos -->
+                @if(addingNewCalendar){
+                  <mat-form-field appearance="outline" class="w-100">
+                    <input 
+                      matInput 
+                      placeholder="Nombre del nuevo calendario" 
+                      [(ngModel)]="newCalendarName" 
+                    />
+                  </mat-form-field>
+                }@else {
+                  <mat-form-field appearance="outline" class="w-100">
+                    <mat-select [(ngModel)]="inputEvent.calendar" placeholder="Seleccionar Calendario">
+                      <mat-option *ngFor="let calendar of calendars" [value]="calendar.id">
+                        {{ calendar.name }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                }
+                
+                <button 
+                  *ngIf="addingNewCalendar" 
+                  mat-mini-fab 
+                  color="primary"
+                  (click)="addNewCalendar()"
+                  matTooltip="Guardar nuevo calendario"
+                >
+                  <mat-icon>add</mat-icon>
+                </button>
+                
+                <button 
+                  mat-mini-fab 
+                  [color]="addingNewCalendar ? 'warn' : 'primary'"
+                  (click)="toggleAddCalendar()"
+                  [matTooltip]="addingNewCalendar ? 'Cancelar' : 'Agregar nuevo calendario'"
+                >
+                  <mat-icon>{{ addingNewCalendar ? 'close' : 'add' }}</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botones de acción -->
+          <div class="d-flex justify-content-end gap-4 mt-5"> <!-- Más espacio arriba y entre botones -->
+            @if (inputEvent.id != -1) {
+              <button mat-stroked-button color="warn" (click)="deleteEvent()" *ngIf="inputEvent.id">
+                <mat-icon class="me-2">delete</mat-icon>
+                Eliminar
+              </button>
+            }
+            <div class="d-flex gap-4">
+              <button mat-stroked-button class="px-4" (click)="cancel()">Cancelar</button>
+              <button mat-flat-button color="primary" class="px-4" (click)="actionEvent()">Guardar</button>
+            </div>
+          </div>
+          
+          
+        </mat-card-content>
+        <br>
+      </mat-card>
+    </div>
+  </div>
+</div>

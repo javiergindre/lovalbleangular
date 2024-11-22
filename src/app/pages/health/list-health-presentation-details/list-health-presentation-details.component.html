@@ -1,0 +1,59 @@
+<mat-card class="cardWithShadow">
+  <mat-card-content>
+    <div class="row">
+      <div class="col-8 d-flex align-items-center">
+        <h4>{{ healthPresentation?.healthServiceName }}</h4>
+      </div>
+
+      <div class="col-4">
+        <h4 class="f-s-16">
+          {{ healthPresentation?.fromDate | date : "dd/MM/yyyy" }} -
+          {{ healthPresentation?.toDate | date : "dd/MM/yyyy" }}
+        </h4>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<div class="row">
+  <div class="col-lg-2 col-sm-4 col-6">
+    <mat-card class="shadow-none text-center bg-light-primary shadow-none">
+      <mat-card-content>
+        <h4 class="mat-subtitle-2 f-w-600 text-primary m-t-8">
+          Cantidad seleccionados
+        </h4>
+        <h6 class="m-t-4 mat-subtitle-1 f-w-600 text-primary m-t-8 f-s-15">
+          {{ subtitle1 }}
+        </h6>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-lg-2 col-sm-4 col-6">
+    <mat-card class="shadow-none text-center bg-light-accent shadow-none">
+      <mat-card-content>
+        <h4 class="mat-subtitle-2 f-w-600 text-accent m-t-8">
+          Importe seleccionados
+        </h4>
+        <h6 class="m-t-4 mat-subtitle-1 f-w-600 text-accent m-t-8 f-s-15">
+          {{ subtitle2 | currency }}
+        </h6>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<app-generic-pagination-table
+  [data$]="filteredData$"
+  [isLoading$]="isLoading$"
+  [columns]="columns"
+  title="Lista de facturas"
+  subtitle=""
+  [expandable]="true"
+  [tabOptions]="tabOptions"
+  [selectedTabIndex]="this.initialTab"
+  (pageChange)="onPageChange($event)"
+  (tabChange)="onTabChange($event)"
+  [showCreateButton]="false"
+>
+  <ng-template #expandedContent let-element> </ng-template>
+</app-generic-pagination-table>

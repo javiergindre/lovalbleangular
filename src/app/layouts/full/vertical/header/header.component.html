@@ -1,0 +1,230 @@
+<mat-toolbar class="topbar">
+  <!-- --------------------------------------------------------------- -->
+  <!-- Desktop Menu -->
+  @if(showToggle) {
+  <button mat-icon-button (click)="toggleCollapsed.emit()" class="d-flex justify-content-center">
+    <i-tabler name="menu-2" class="icon-20 d-flex"></i-tabler>
+  </button>
+  }
+
+  <!-- Mobile Menu -->
+  @if(!showToggle) {
+  <button mat-icon-button (click)="toggleMobileNav.emit()" class="d-flex justify-content-center">
+    <i-tabler name="menu-2" class="icon-20 d-flex"></i-tabler>
+  </button>
+  }
+  <!-- --------------------------------------------------------------- -->
+
+  <!-- --------------------------------------------------------------- -->
+  <!--  Search -->
+  <!-- --------------------------------------------------------------- -->
+  <button *ngIf="skinDev" mat-icon-button (click)="openDialog()" class="d-flex justify-content-center">
+    <i-tabler name="search" class="icon-20 d-flex"></i-tabler>
+  </button>
+
+  <div class="d-none d-lg-flex">
+    <!-- --------------------------------------------------------------- -->
+    <!--  Links -->
+    <!-- --------------------------------------------------------------- -->
+    <button mat-button [matMenuTriggerFor]="appsmenu" aria-label="Notifications">
+      <div class="d-flex align-items-center">
+        Apps <i-tabler name="chevron-down" class="icon-16 m-l-4"></i-tabler>
+      </div>
+    </button>
+    <mat-menu #appsmenu="matMenu" class="apps-dd cardWithShadow">
+      <div class="p-32 p-b-0">
+        <div>
+          @if(menuItems()){ @for (levelZeroItem of menuItems(); track $index) {
+          <!-- comentar if para ver todas las opciones por más que no tengan hijos ↓ -->
+          @if (levelZeroItem.level == 0 && levelZeroItem.children){
+          <div class="col-sm-4 m-b-24">
+            <h4 class="f-s-14 f-w-600 m-0 textprimary mat-subtitle-1 hover-text">
+              {{ levelZeroItem.title }}
+            </h4>
+          </div>
+          <div class="d-flex flex-wrap">
+            @for (levelOneItem of levelZeroItem.children; track levelOneItem) {
+            <!-- comentar if para ver todas las opciones por más que no tengan hijos ↓ -->
+            @if(levelOneItem.children){
+            <div class="col-sm-4 text-hover-primary m-b-24">
+              <a (click)="changeNavItems.emit(levelOneItem)"
+                class="d-flex align-items-center text-decoration-none cursor-pointer">
+                <span
+                  class="text-primary bg-light-primary rounded icon-40 d-flex align-items-center justify-content-center">
+                  <img [src]="levelOneItem.icon" width="20" />
+                </span>
+
+                <div class="m-l-16">
+                  <h5 class="f-s-14 f-w-600 m-0 textprimary mat-subtitle-1 hover-text">
+                    {{ levelOneItem.title }}
+                  </h5>
+                  <span class="mat-body-1 f-s-12">{{ levelOneItem.description }}</span>
+                </div>
+              </a>
+            </div>
+            } }
+          </div>
+          } } }
+        </div>
+      </div>
+    </mat-menu>
+    <a *ngIf="skinDev" mat-button [routerLink]="['/tools/communications/chat']">Chat</a>
+    <a *ngIf="skinDev" mat-button [routerLink]="['/apps/calendar']">Calendar</a>
+    <a *ngIf="skinDev" mat-button [routerLink]="['/auth/unauthorized']">Email</a>
+  </div>
+
+  <span class="flex-1-auto"></span>
+
+  <!-- Mobile Menu -->
+  <button mat-icon-button (click)="toggleMobileFilterNav.emit()" class="d-flex d-lg-none justify-content-center">
+    <i-tabler name="grid-dots" class="icon-20 d-flex"></i-tabler>
+  </button>
+
+  @if(selectedTenant | async; as tenant) {
+  <button [matMenuTriggerFor]="flags" mat-button class="m-r-5">
+    <span>{{ tenant.name }}</span>
+  </button>
+  <mat-menu #flags="matMenu" class="cardWithShadow">
+    @if(tenants | async; as tenants) { @for(tenant of tenants; track tenant.id)
+    {
+    <button mat-menu-item (click)="changeTenant(tenant)">
+      <div class="d-flex align-items-center">
+        <span class="mat-subtitle-1 f-s-14">{{ tenant.name }}</span>
+      </div>
+    </button>
+    } }
+  </mat-menu>
+  }
+
+  <!-- --------------------------------------------------------------- -->
+  <!-- Notification Dropdown -->
+  <!-- --------------------------------------------------------------- -->
+  <!-- <button mat-icon-button [matMenuTriggerFor]="notificationmenu" aria-label="Notifications">
+    <i-tabler class="d-flex" name="bell" matBadge="1" matBadgeColor="primary"></i-tabler>
+  </button>
+  <mat-menu #notificationmenu="matMenu" class="topbar-dd cardWithShadow">
+    <div class="d-flex align-items-center p-x-32 p-y-16">
+      <h6 class="f-s-16 f-w-600 m-0 mat-subtitle-1">Notifications</h6>
+      <span class="m-l-auto">
+        <span class="bg-primary text-white p-x-8 p-y-4 f-w-500 rounded f-s-12">5 new</span>
+      </span>
+    </div>
+
+    @for(notification of notifications; track notification.title) {
+    <button mat-menu-item class="p-x-32 p-y-16">
+      <div class="d-flex align-items-center">
+        <img [src]="notification.img" class="rounded-circle" width="48" />
+        <div class="m-l-16">
+          <h5 class="f-s-14 f-w-600 m-0 mat-subtitle-1">
+            {{ notification.title }}
+          </h5>
+          <span>{{ notification.subtitle }}</span>
+        </div>
+      </div>
+    </button>
+    }
+
+    <div class="p-y-12 p-x-32">
+      <button mat-stroked-button color="primary" class="w-100">
+        See all notifications
+      </button>
+    </div>
+  </mat-menu> -->
+
+  <!-- --------------------------------------------------------------- -->
+  <!-- profile Dropdown -->
+  <!-- --------------------------------------------------------------- -->
+  <button class="d-flex justify-content-center align-items-center" mat-icon-button [matMenuTriggerFor]="profilemenu"
+    aria-label="Menu" (click)="hideChangePassword()" (menuOpened)="onMenuOpened()">
+    <div class="d-flex justify-content-center">
+      <div *ngIf="showInitials" class="d-flex align-items-center" width="95">
+        <button mat-mini-fab color="primary">
+          <b class="f-s-18">{{ initials }}</b>
+        </button>
+      </div>
+    </div>
+  </button>
+  <!-- Profile Menu -->
+  <mat-menu #profilemenu="matMenu" class="topbar-dd cardWithShadow b-b-2" [overlapTrigger]="false" [hasBackdrop]="true"
+    (closed)="onMenuClosed()">
+    <div class="scroll-container">
+      <div [hidden]="changePsw">
+        <div class="p-x-32 p-y-16">
+          <div class="d-flex align-items-center p-b-24 b-b-1 m-t-16">
+            @if(showInitials){
+            <div class="d-flex justify-content-center align-items-center" width="95">
+              <button mat-fab color="primary">
+                <b class="f-s-20">{{ initials }}</b>
+              </button>
+            </div>
+            } @if(personName | async; as person){
+            <div class="m-l-16">
+              <h6 class="f-s-14 f-w-600 m-0 mat-subtitle-1">
+                {{ person }}
+              </h6>
+              @if(userName | async; as user){
+              <span class="d-flex align-items-center">
+                <i-tabler name="mail" class="icon-15 m-r-4"></i-tabler>
+                {{ user }} </span>}
+            </div>
+            }
+          </div>
+        </div>
+        <div class="p-x-32" *ngIf="skinDev">
+          @for(profile of profiledd; track profile.title) {
+          <a class="p-y-16 text-decoration-none d-block text-hover-primary" [routerLink]="[profile.link]">
+            <div class="d-flex align-items-center">
+              <button mat-mini-fab class="text-primary bg-light-primary shadow-none rounded">
+                <img [src]="profile.img" width="20" />
+              </button>
+
+              <div class="m-l-16">
+                <h5 class="f-s-14 f-w-600 m-0 textprimary mat-subtitle-1 hover-text">
+                  {{ profile.title }}
+                </h5>
+                <span class="mat-body-1">{{ profile.subtitle }}</span>
+              </div>
+            </div>
+          </a>
+          }
+
+          <!-- upgrade -->
+          <!-- <div
+            class="p-24 overflow-hidden bg-light-primary rounded position-relative m-y-16">
+            <div class="d-flex align-items-center">
+              <div>
+                <h5 class="f-s-18 m-0 f-w-600 m-b-12 mat-subtitle-1">
+                  Unlimited <br />
+                  Access
+                </h5>
+                <button mat-flat-button color="primary">Upgrade</button>
+              </div>
+              <div class="m-l-auto">
+                <img
+                  src="/assets/images/backgrounds/unlimited-bg.png"
+                  alt="upgrade-bg"
+                  class="upgrade-bg"
+                />
+              </div>
+            </div>
+          </div> -->
+        </div>
+        <div class="p-x-32">
+          <button mat-flat-button color="primary" class="w-100" (click)="showChangePassword($event)">
+            Cambiar contraseña
+          </button>
+        </div>
+        <div class="p-y-12 p-x-32">
+          <a (click)="logout()" mat-stroked-button color="primary" class="w-100">
+            Cerrar sesión
+          </a>
+        </div>
+      </div>
+
+      <!-- Form of change password -->
+      <div class="p-x-16 p-y-16" [hidden]="!changePsw" (click)="$event.stopPropagation()" (keydown)="handleTab($event)">
+        <app-change-password (cancelChangePassword)="hideChangePassword()"></app-change-password>
+      </div>
+    </div>
+  </mat-menu>
+</mat-toolbar>

@@ -1,0 +1,31 @@
+<div class="container-calendar">
+    <div class="d-flex flex-column gap-3 w-100 container-buttons-text">
+        <mat-form-field appearance="outline" class="custom-width">
+          <input
+            matInput
+            placeholder="Nombre del nuevo calendario"
+            [(ngModel)]="newCalendarName"
+          />
+        </mat-form-field>
+        <div class="container-buttons" >
+            <button
+            mat-mini-fab
+            color="primary"
+            (click)="saveCalendar()"
+            matTooltip="Guardar nuevo calendario"
+          >
+            <mat-icon>add</mat-icon>
+          </button>
+          <button
+            mat-mini-fab
+            class="btn-margin"
+            color="warn"
+            (click)="cancel()"
+            matTooltip="Cancelar"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+    </div>
+      
+</div>

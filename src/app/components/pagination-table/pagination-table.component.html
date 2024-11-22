@@ -1,0 +1,252 @@
+<mat-card class="cardWithShadow">
+  <mat-card-header>
+    <div class="header-content">
+      <div>
+        <mat-card-title>{{ title }}</mat-card-title>
+        <mat-card-subtitle class="mat-body-1">{{ subtitle }}</mat-card-subtitle>
+      </div>
+      @if(showCreateButton){
+      <button mat-raised-button color="primary" (click)="navigateToCreate()">
+        Agregar nuevo
+      </button>
+      }
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+    @if (tabOptions && tabOptions.length > 0) {
+    <mat-card class="shadow-none">
+      <mat-card-content class="p-0 m-t-10">
+        <mat-tab-group
+          mat-stretch-tabs="false"
+          mat-align-tabs="start"
+          [(selectedIndex)]="selectedTabIndex"
+          (selectedTabChange)="onTabChange($event)"
+        >
+          @for (tab of tabOptions; track tab.value) {
+          <mat-tab [label]="tab.label"></mat-tab>
+          }
+        </mat-tab-group>
+      </mat-card-content>
+    </mat-card>
+    }
+    <div class="m-t-30 table-container" #tableContainer>
+      <div class="table-overlay" *ngIf="isLoading$ | async">
+        <mat-spinner></mat-spinner>
+      </div>
+      <table
+        mat-table
+        [dataSource]="dataSource"
+        multiTemplateDataRows
+        [class.loading]="isLoading$ | async"
+      >
+        @for (column of columns; track column.name) {
+        <ng-container [matColumnDef]="column.name">
+          <th
+            mat-header-cell
+            *matHeaderCellDef
+            [ngClass]="getHeaderClass(column)"
+          >
+            {{ column.displayName }}
+          </th>
+          <td
+            mat-cell
+            *matCellDef="let element"
+            [ngClass]="getCellClass(column)"
+          >
+            @switch (column.type) { @case ('image') {
+            <div class="d-flex align-items-center">
+              <img
+                [src]="element[column.imageConfig!.imagePath]"
+                alt="user"
+                width="40"
+                class="rounded-circle"
+              />
+              <div class="m-l-16">
+                <h6 class="mat-subtitle-1 f-s-14 f-w-600">
+                  {{ element[column.imageConfig!.title] }}
+                </h6>
+                <span class="mat-body-1 f-s-12">
+                  {{ element[column.imageConfig!.subtitle] }}
+                </span>
+              </div>
+            </div>
+            } @case ('custom') {
+            <ng-container *ngIf="column.format">
+              {{ column.format(element) }}
+            </ng-container>
+            }@case ('date') {
+            <ng-container *ngIf="column.format">
+              {{ column.format(element) }}
+            </ng-container>
+            } @default {
+            {{ element[column.name] }}
+            } }
+          </td>
+        </ng-container>
+        }
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef class="f-w-600">Acciones</th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button color="primary" (click)="onEdit(element)">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="signature">
+          <th mat-header-cell *matHeaderCellDef class="f-w-600">
+            Firma recibo
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <button
+              mat-icon-button
+              color="primary"
+              (click)="onSignature(element)"
+            >
+              <mat-icon>gesture</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="confirm">
+          <th mat-header-cell *matHeaderCellDef class="f-w-600">Confirmar</th>
+          <td mat-cell *matCellDef="let element">
+            <button
+              mat-stroked-button
+              color="primary"
+              (click)="onConfirm(element)"
+            >
+              Confirmar
+            </button>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="download">
+          <th mat-header-cell *matHeaderCellDef class="f-w-600">Recibo</th>
+          <td mat-cell *matCellDef="let element">
+            <button
+              mat-icon-button
+              color="primary"
+              (click)="onDownload(element)"
+            >
+              <mat-icon>download</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="custom">
+          <th mat-header-cell *matHeaderCellDef class="f-w-600">
+            {{ getCustomColumnHeader() }}
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <ng-container [ngSwitch]="getCustomColumnType(element)">
+              @if(getCustomColumnType(element) === 'icon') {
+              <button
+                mat-icon-button
+                color="primary"
+                (click)="onCustomAction(element)"
+              >
+                <mat-icon>{{ getCustomColumnContent(element) }}</mat-icon>
+              </button>
+              }@else {
+              <span [innerHTML]="getCustomColumnContent(element)"></span>
+              }
+            </ng-container>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="view">
+          <th mat-header-cell *matHeaderCellDef class="f-w-600 text-center">
+            Ver
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <button
+              mat-icon-button
+              color="primary"
+              (click)="onViewAction(element)"
+            >
+              <mat-icon>visibility</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        @if (expandable) {
+        <ng-container matColumnDef="expand">
+          <th mat-header-cell *matHeaderCellDef aria-label="row actions">
+            &nbsp;
+          </th>
+          <td mat-cell *matCellDef="let element" class="expand-cell">
+            <button
+              mat-icon-button
+              aria-label="expand row"
+              (click)="expandElement(element); $event.stopPropagation()"
+            >
+              <mat-icon>
+                {{
+                  expandedElement === element
+                    ? "keyboard_arrow_up"
+                    : "keyboard_arrow_down"
+                }}
+              </mat-icon>
+            </button>
+          </td>
+        </ng-container>
+        }
+
+        <ng-container matColumnDef="expandedDetail">
+          <td
+            mat-cell
+            *matCellDef="let element"
+            [attr.colspan]="displayedColumnsWithExpand.length"
+          >
+            <div
+              class="element-detail"
+              [@detailExpand]="
+                element == expandedElement ? 'expanded' : 'collapsed'
+              "
+            >
+              <div class="p-15 rounded b-1 m-b-16 m-x-18">
+                @if (expandedContentTemplate && expandedElement === element) {
+                <ng-container
+                  *ngTemplateOutlet="
+                    expandedContentTemplate;
+                    context: { $implicit: element }
+                  "
+                ></ng-container>
+                }
+              </div>
+            </div>
+          </td>
+        </ng-container>
+
+        <tr
+          mat-header-row
+          *matHeaderRowDef="displayedColumnsWithExpand; sticky: true"
+        ></tr>
+        <tr
+          mat-row
+          *matRowDef="let element; columns: displayedColumnsWithExpand"
+          class="element-row"
+          [class.expanded-row]="expandable && expandedElement === element"
+        ></tr>
+        @if (expandable) {
+        <tr
+          mat-row
+          *matRowDef="let row; columns: ['expandedDetail']"
+          class="detail-row"
+        ></tr>
+        }
+      </table>
+      <mat-paginator
+        #paginator
+        [pageIndex]="currentPage"
+        [length]="totalItems"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="[1, 5, 10, 20]"
+        (page)="onPageChange($event)"
+      >
+      </mat-paginator>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,48 @@
+.bg-light-reply {
+    background-color: #f8f9fa !important; 
+  }
+
+.border-left {
+  border-left: 4px solid #007bff !important; 
+}
+
+.bg-light {
+  margin-left: 1vw !important;
+}
+
+.inline-text {
+  display: inline; 
+  margin-right: 0.6vw; 
+}
+
+.icon-20 {
+  align-items: center !important;
+  justify-content: center !important; 
+  padding: 0 !important; 
+}
+
+
+.small-letter{
+  font-size: 0.8rem !important; 
+}
+
+.text-letter{
+  font-size: 0.9rem;
+}
+
+.btn-smm{
+  width: 1.5vw;
+  height: 1.5vh;
+}
+
+.rounded-circle {
+  width: 1.6vw;
+  height: 1.6vw;
+  background-color: #5d87ff !important;
+  color: white; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.6vw !important;
+  border-radius: 50%; /* Esto hace el círculo */
+}

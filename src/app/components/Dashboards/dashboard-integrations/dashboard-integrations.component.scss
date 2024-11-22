@@ -1,0 +1,32 @@
+.select-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px; /* Espacio entre elementos */
+    width: 100%;
+}
+
+ng-select {
+    width: 150px;
+}
+
+.search-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Alinea el ícono verticalmente */
+}
+
+mat-icon {
+    font-size: 24px;
+    color: #333;
+    margin: 0; /* Elimina cualquier margen que cause desplazamiento */
+}
+
+
+.chart-container{
+    width: 95%;
+    margin: 0 auto;
+}

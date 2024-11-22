@@ -1,0 +1,232 @@
+<mat-card class="cardWithShadow theme-card">
+  <mat-card-header class="d-flex justify-content-between align-items-center">
+    <mat-card-title class="m-b-0">
+      {{ isViewMode ? "Ver" : "Registro de" }} Nota de Crédito
+    </mat-card-title>
+    <button mat-stroked-button (click)="watchInvoice()">Ver factura</button>
+  </mat-card-header>
+  <mat-card-content class="b-t-1">
+    <form [formGroup]="creditNoteForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-lg-4 col-12">
+          <div class="row mt-3">
+            <div class="col-lg-6 col-12">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Tipo de comprobante</mat-label>
+                <mat-select
+                  formControlName="taxConditionId"
+                  [disabled]="isViewMode"
+                >
+                  <mat-option
+                    *ngFor="let option of taxConditionOptions"
+                    [value]="option.id"
+                  >
+                    {{ option.text }}
+                  </mat-option>
+                </mat-select>
+                <mat-error
+                  *ngIf="
+                    creditNoteForm.get('taxConditionId')?.hasError('required')
+                  "
+                >
+                  El tipo de comprobante es requerido
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-lg-6 col-12">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Punto de venta</mat-label>
+                <input
+                  matInput
+                  formControlName="pointOfSale"
+                  (input)="formatPointOfSale($event)"
+                  [readonly]="isViewMode"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-lg-6 col-12">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Número de comprobante</mat-label>
+                <input
+                  matInput
+                  formControlName="documentNumber"
+                  (input)="formatDocumentNumber($event)"
+                  [readonly]="isViewMode"
+                />
+              </mat-form-field>
+            </div>
+            <div class="col-lg-6 col-12">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Número de nota de crédito</mat-label>
+                <input matInput formControlName="creditNoteNumber" readonly />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-lg-6 col-12 mb-3 mb-lg-0">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Importe de nota de crédito</mat-label>
+                <input
+                  matInput
+                  type="number"
+                  formControlName="amount"
+                  readonly="readonly"
+                />
+              </mat-form-field>
+            </div>
+            <div class="col-lg-6 col-12">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Fecha de emisión</mat-label>
+                <input
+                  matInput
+                  [matDatepicker]="picker"
+                  formControlName="issueDate"
+                  [readonly]="isViewMode"
+                />
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="picker"
+                  [disabled]="isViewMode"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-lg-6 col-12 mb-3 mb-lg-0">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>CAE</mat-label>
+                <input
+                  matInput
+                  formControlName="cae"
+                  (input)="formatCae($event)"
+                  [readonly]="isViewMode"
+                />
+              </mat-form-field>
+            </div>
+            <div class="col-lg-6 col-12">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Vencimiento CAE</mat-label>
+                <input
+                  matInput
+                  [matDatepicker]="caePicker"
+                  formControlName="caeExpirationDate"
+                  [readonly]="isViewMode"
+                />
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="caePicker"
+                  [disabled]="isViewMode"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #caePicker></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-12">
+              <div class="d-flex align-items-center m-b-16">
+                @if (!isViewMode) {
+                <button
+                  mat-flat-button
+                  color="primary"
+                  type="button"
+                  (click)="fileInput.click()"
+                >
+                  <i-tabler name="upload" class="icon-20 m-r-8"></i-tabler>
+                  Seleccionar archivo PDF
+                </button>
+                <input
+                  type="file"
+                  #fileInput
+                  hidden
+                  accept="application/pdf"
+                  (change)="onFileSelected($event)"
+                />
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-8 col-12 mt-3 mt-lg-0">
+          <mat-card class="cardWithShadow theme-card">
+            <mat-card-content>
+              @if (selectedFiles.length > 0) {
+              <mat-tab-group animationDuration="0ms">
+                @for (file of selectedFiles; track file.name) {
+                <mat-tab>
+                  <ng-template mat-tab-label>
+                    <span class="d-flex align-items-center">
+                      <span class="pdf-filename" [title]="file.name">{{
+                        getFileName(file.name)
+                      }}</span>
+                      @if (!isViewMode) {
+                      <button
+                        mat-icon-button
+                        color="warn"
+                        type="button"
+                        (click)="removeFile(file, $event)"
+                      >
+                        <i-tabler name="trash" class="icon-20"></i-tabler>
+                      </button>
+                      }
+                    </span>
+                  </ng-template>
+                  <div class="pdf-container">
+                    <iframe
+                      [src]="getSafeUrl(file)"
+                      width="100%"
+                      height="600px"
+                    ></iframe>
+                  </div>
+                </mat-tab>
+                }
+              </mat-tab-group>
+              } @else {
+              <p class="text-center">No hay archivos PDF seleccionados</p>
+              }
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+  <mat-card-actions class="b-t-1">
+    <button
+      mat-flat-button
+      color="warn"
+      class="m-r-8"
+      (click)="cancelAndGoBack()"
+    >
+      Cancelar
+    </button>
+    @if (!isViewMode) {
+    <button
+      mat-flat-button
+      color="primary"
+      (click)="onSubmit()"
+      [disabled]="!isFormValid()"
+    >
+      Guardar
+    </button>
+    } @if (isViewMode) {
+    <button
+      mat-flat-button
+      color="primary"
+      (click)="onSubmit()"
+      [disabled]="!isFormValid() || isLoadingFiles"
+    >
+      Confirmar
+    </button>
+    <!-- <button mat-flat-button color="warn" (click)="reject()">Rechazar</button> -->
+    }
+  </mat-card-actions>
+
+</mat-card>

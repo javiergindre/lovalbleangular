@@ -1,0 +1,106 @@
+<mat-card class="cardWithShadow">
+  <mat-card-content class="p-24">
+    <div class="row justify-content-between">
+      <div class="col-lg-4">
+        <mat-form-field appearance="outline" class="w-100 hide-hint">
+          <input
+            matInput
+            placeholder="Buscar por DNI"
+            [(ngModel)]="filter.dni"
+            (keyup.enter)="onSearch()"
+          />
+          <mat-icon matSuffix>
+            <i-tabler name="search" class="icon-20"></i-tabler>
+          </mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="col-lg-4 d-flex align-items-center justify-content-end">
+        <button mat-button color="warn" class="m-r-10" (click)="clearFilters()">
+          Limpiar filtros
+        </button>
+        <button
+          mat-stroked-button
+          color="primary"
+          (click)="onSearch()"
+          class="mr-2"
+        >
+          Buscar
+        </button>
+      </div>
+    </div>
+  </mat-card-content>
+  <!-- <mat-accordion>
+    <mat-expansion-panel #expansionPanel class="shadow-none">
+      <mat-expansion-panel-header>
+        <mat-panel-description class="mat-body-1">
+          <i-tabler name="adjustments-alt" class="icon-20 m-r-12"></i-tabler>
+          Filtros avanzados
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div class="row">
+        <div class="col-4">
+          <mat-form-field appearance="outline" color="primary" class="w-100">
+            <mat-label>Ejemplo</mat-label>
+            <input
+              matInput
+              [(ngModel)]="filter.document"
+              (keyup.enter)="onSearch()"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-4">
+          <mat-form-field appearance="outline" color="primary" class="w-100">
+            <mat-label>Ejemplo</mat-label>
+            <input
+              matInput
+              [(ngModel)]="filter.name"
+              (keyup.enter)="onSearch()"
+            />
+          </mat-form-field>
+        </div>
+        <div class="col-4">
+          <mat-form-field appearance="outline" color="primary" class="w-100">
+            <mat-label>Ejemplo</mat-label>
+            <input
+              matInput
+              [(ngModel)]="filter.segment"
+              (keyup.enter)="onSearch()"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion> -->
+</mat-card>
+
+<app-generic-pagination-table
+  [data$]="filteredData$"
+  [columns]="columns"
+  title="Lista de registros"
+  subtitle=""
+  [expandable]="true"
+  (pageChange)="onPageChange($event)"
+  [isLoading$]="isLoading$.asObservable()"
+>
+  <!-- <ng-template #expandedContent let-element>
+    <div>
+      <button mat-stroked-button color="primary">
+        <span class="d-flex align-items-center gap-10">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#5d87ff"
+          >
+            <path
+              d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h168q13-36 43.5-58t68.5-22q38 0 68.5 22t43.5 58h168q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm80-80h280v-80H280v80Zm0-160h400v-80H280v80Zm0-160h400v-80H280v80Zm200-190q13 0 21.5-8.5T510-820q0-13-8.5-21.5T480-850q-13 0-21.5 8.5T450-820q0 13 8.5 21.5T480-790ZM200-200v-560 560Z"
+            />
+          </svg>
+          test</span
+        >
+      </button>
+    </div>
+  </ng-template> -->
+</app-generic-pagination-table>

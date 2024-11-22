@@ -1,0 +1,1303 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="recaptchakey" content="6LfN-uIcAAAAAKkdtpip6-6bvXKVwrqGjuOdKLtD">
+  <meta property="og:image" content="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/social_share.png" />
+  <script src='https://www.google.com/recaptcha/api.js?render=6LfN-uIcAAAAAKkdtpip6-6bvXKVwrqGjuOdKLtD'></script>
+
+
+  
+
+  <script src="https://www.google.com/recaptcha/api.js?render=6LfN-uIcAAAAAKkdtpip6-6bvXKVwrqGjuOdKLtD"></script>
+  
+  <script type="text/javascript">
+    var SITEPATH = 'https://www.brenson.com.ar';
+    var THEMEPATH = 'https://www.brenson.com.ar/wp-content/themes/ford-theme-2021';
+    var MAP_SUCURSALES = `
+					/*
+					** Marker Casa Central Caballito
+					*/
+					if ($(window).width() < 768) {
+						var iconSize = 40;
+						var infoPosition = 'bottom';
+					} else {
+						var iconSize = 70;
+						var infoPosition = 'left';
+					}
+					var marker55 = map.addMarker({
+						lat: -34.6248914,
+						lng: -58.452540,
+						icon: {
+							url: 'https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/map-marker.svg',
+							scaledSize: new google.maps.Size(iconSize, iconSize)
+						},
+					});
+				var infoWindow = new SnazzyInfoWindow({
+					marker: marker55,
+					content: '<div class="custom-infowindow"><h4>Sucursal <span>Casa Central Caballito</span></h4><address>Av. Rivadavia 6111, CABA</address><a href="https://www.google.com/maps/search/?api=1&query=-34.6248914,-58.452540" target="_blank" class="btn-sm-white">COMO LLEGAR <i class="fa fa-angle-right"></i></a></div>',
+					placement: infoPosition,
+					wrapperClass: 'custom-infowindow--container',
+					pointer: false,
+					});
+
+					loc = new google.maps.LatLng(-34.6248914, -58.452540);
+					bounds.extend(loc);
+				
+					/*
+					** Marker Bariloche
+					*/
+					if ($(window).width() < 768) {
+						var iconSize = 40;
+						var infoPosition = 'bottom';
+					} else {
+						var iconSize = 70;
+						var infoPosition = 'left';
+					}
+					var marker57 = map.addMarker({
+						lat: -41.1201209,
+						lng: -71.2318435,
+						icon: {
+							url: 'https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/map-marker.svg',
+							scaledSize: new google.maps.Size(iconSize, iconSize)
+						},
+					});
+				var infoWindow = new SnazzyInfoWindow({
+					marker: marker57,
+					content: '<div class="custom-infowindow"><h4>Sucursal <span>Bariloche</span></h4><address>Cmte. Luis Piedrabuena 6038 San Carlos de Bariloche</address><a href="https://www.google.com/maps/search/?api=1&query=-41.1201209,-71.2318435" target="_blank" class="btn-sm-white">COMO LLEGAR <i class="fa fa-angle-right"></i></a></div>',
+					placement: infoPosition,
+					wrapperClass: 'custom-infowindow--container',
+					pointer: false,
+					});
+
+					loc = new google.maps.LatLng(-41.1201209, -71.2318435);
+					bounds.extend(loc);
+				
+					/*
+					** Marker Vicente López
+					*/
+					if ($(window).width() < 768) {
+						var iconSize = 40;
+						var infoPosition = 'bottom';
+					} else {
+						var iconSize = 70;
+						var infoPosition = 'left';
+					}
+					var marker56 = map.addMarker({
+						lat: -34.54545555720136,
+						lng: -58.5008206297744,
+						icon: {
+							url: 'https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/map-marker.svg',
+							scaledSize: new google.maps.Size(iconSize, iconSize)
+						},
+					});
+				var infoWindow = new SnazzyInfoWindow({
+					marker: marker56,
+					content: '<div class="custom-infowindow"><h4>Sucursal <span>Vicente López</span></h4><address>Av. Mitre 364 Vicente López GBA</address><a href="https://www.google.com/maps/search/?api=1&query=-34.54545555720136,-58.5008206297744" target="_blank" class="btn-sm-white">COMO LLEGAR <i class="fa fa-angle-right"></i></a></div>',
+					placement: infoPosition,
+					wrapperClass: 'custom-infowindow--container',
+					pointer: false,
+					});
+
+					loc = new google.maps.LatLng(-34.54545555720136, -58.5008206297744);
+					bounds.extend(loc);
+				
+					/*
+					** Marker Recova
+					*/
+					if ($(window).width() < 768) {
+						var iconSize = 40;
+						var infoPosition = 'bottom';
+					} else {
+						var iconSize = 70;
+						var infoPosition = 'left';
+					}
+					var marker762 = map.addMarker({
+						lat: -34.58972391194352,
+						lng: -58.38206280197435,
+						icon: {
+							url: 'https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/map-marker.svg',
+							scaledSize: new google.maps.Size(iconSize, iconSize)
+						},
+					});
+				var infoWindow = new SnazzyInfoWindow({
+					marker: marker762,
+					content: '<div class="custom-infowindow"><h4>Sucursal <span>Recova</span></h4><address>Cerrito 1591, Recoleta</address><a href="https://www.google.com/maps/search/?api=1&query=-34.58972391194352,-58.38206280197435" target="_blank" class="btn-sm-white">COMO LLEGAR <i class="fa fa-angle-right"></i></a></div>',
+					placement: infoPosition,
+					wrapperClass: 'custom-infowindow--container',
+					pointer: false,
+					});
+
+					loc = new google.maps.LatLng(-34.58972391194352, -58.38206280197435);
+					bounds.extend(loc);
+				
+					/*
+					** Marker Caballito &#8211; Posventa
+					*/
+					if ($(window).width() < 768) {
+						var iconSize = 40;
+						var infoPosition = 'bottom';
+					} else {
+						var iconSize = 70;
+						var infoPosition = 'left';
+					}
+					var marker436 = map.addMarker({
+						lat: -34.6248914,
+						lng: -58.452518,
+						icon: {
+							url: 'https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/map-marker.svg',
+							scaledSize: new google.maps.Size(iconSize, iconSize)
+						},
+					});
+				var infoWindow = new SnazzyInfoWindow({
+					marker: marker436,
+					content: '<div class="custom-infowindow"><h4>Sucursal <span>Caballito &#8211; Posventa</span></h4><address>Av. Rivadavia 6111, CABA</address><a href="https://www.google.com/maps/search/?api=1&query=-34.6248914,-58.452518" target="_blank" class="btn-sm-white">COMO LLEGAR <i class="fa fa-angle-right"></i></a></div>',
+					placement: infoPosition,
+					wrapperClass: 'custom-infowindow--container',
+					pointer: false,
+					});
+
+					loc = new google.maps.LatLng(-34.6248914, -58.452518);
+					bounds.extend(loc);
+				
+					/*
+					** Marker Vte. López &#8211; Postventa
+					*/
+					if ($(window).width() < 768) {
+						var iconSize = 40;
+						var infoPosition = 'bottom';
+					} else {
+						var iconSize = 70;
+						var infoPosition = 'left';
+					}
+					var marker714 = map.addMarker({
+						lat: -34.54544672011015,
+						lng: -58.500949375802236,
+						icon: {
+							url: 'https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/map-marker.svg',
+							scaledSize: new google.maps.Size(iconSize, iconSize)
+						},
+					});
+				var infoWindow = new SnazzyInfoWindow({
+					marker: marker714,
+					content: '<div class="custom-infowindow"><h4>Sucursal <span>Vte. López &#8211; Postventa</span></h4><address>Av. Mitre 364, Vicente López</address><a href="https://www.google.com/maps/search/?api=1&query=-34.54544672011015,-58.500949375802236" target="_blank" class="btn-sm-white">COMO LLEGAR <i class="fa fa-angle-right"></i></a></div>',
+					placement: infoPosition,
+					wrapperClass: 'custom-infowindow--container',
+					pointer: false,
+					});
+
+					loc = new google.maps.LatLng(-34.54544672011015, -58.500949375802236);
+					bounds.extend(loc);
+				`;
+    var SUCURSALES = '{"1095":{"nombre":"Digital","localizacion":{"direccion":"Contactanos desde cualquier lugar del pa\u00eds.","ubicacion":{"lat":"-34.6248914","lng":"-58.452518"}}},"1087":{"nombre":"Vte. L\u00f3pez &#8211; Postventa","localizacion":{"direccion":"Av. Mitre 364, Vicente L\u00f3pez","ubicacion":{"lat":"-34.54544672011015","lng":"-58.500949375802236"}}},"1085":{"nombre":"Caballito Posventa","localizacion":{"direccion":"Av. Rivadavia 6111, CABA","ubicacion":{"lat":"-34.6248914","lng":"-58.452518"}}},"1084":{"nombre":"Recova","localizacion":{"direccion":"Cerrito 1591, Recoleta","ubicacion":{"lat":"-34.58972391194352","lng":"-58.38206280197435"}}},"1083":{"nombre":"Vicente L\u00f3pez","localizacion":{"direccion":"Av. Mitre 364 Vicente Lopez GBA","ubicacion":{"lat":"-34.54545555720136","lng":"-58.5008206297744"}}},"1082":{"nombre":"Bariloche","localizacion":{"direccion":"Cmte. Luis Piedrabuena 6038 San Carlos de Bariloche","ubicacion":{"lat":"-41.1201209","lng":"-71.2318435"}}},"1081":{"nombre":"Casa Central Caballito","localizacion":{"direccion":"Av. Rivadavia 6111 - CABA","ubicacion":{"lat":"-34.6248914","lng":"-58.452518"}}}}';
+  </script>
+  <style type="text/css">
+    .main-header .main-header--bottom .data-icon span {
+      font-size: 0.6rem !important
+    }
+
+    @font-face {
+      font-family: 'Ford';
+      src: url('https://jclorenzo.com.ar/wp-content/uploads/2020/06/FordAntennaCondWGL-Bold-1.otf');
+    }
+
+    .main-header--brand .title {
+      font-family: 'Ford' !important;
+    }
+
+    .body {
+      font-family: 'Ford' !important;
+    }
+
+    .main-header .main-header--bottom .container-azul {
+      padding: 0px !important;
+      max-height: 70px !important;
+    }
+  </style>
+
+  <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v23.8 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Servicio - Brenson</title><link rel="preload" data-rocket-preload as="style" href="https://fonts.googleapis.com/css2?family=Be+Vietnam:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,300;1,400;1,500;1,600;1,700;1,800&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,300;1,400;1,500;1,600;1,700;1,800&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,300;1,400;1,500;1,600;1,700;1,800&#038;display=swap" /></noscript><link rel="preload" data-rocket-preload as="image" href="https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORDPASS-1920x728.jpg" imagesrcset="https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORDPASS-1920x728.jpg 1920w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORDPASS-300x114.jpg 300w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORDPASS-1024x388.jpg 1024w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORDPASS-768x291.jpg 768w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORDPASS-1536x583.jpg 1536w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORDPASS-2048x777.jpg 2048w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORDPASS-500x190.jpg 500w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORDPASS-1250x474.jpg 1250w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORDPASS-1500x569.jpg 1500w" imagesizes="(max-width: 1920px) 100vw, 1920px" fetchpriority="high">
+	<link rel="canonical" href="https://www.brenson.com.ar/servicio/" />
+	<meta property="og:locale" content="es_ES" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Servicio - Brenson" />
+	<meta property="og:description" content="Conoce nuestros servicios posventa Un nuevo concepto en nuestro servicio de postventa, desarrollado gracias a la atención especializada, la mejor tecnología y la solución a los problemas de nuestros clientes. Brenson es la mejor opción para el mantenimiento de tu vehículo Ford. Mantenimiento programado y preventivo Cristaleria Chapa y Pintura Alineación y balanceo Reparaciones mecánicas [&hellip;]" />
+	<meta property="og:url" content="https://www.brenson.com.ar/servicio/" />
+	<meta property="og:site_name" content="Brenson" />
+	<meta property="article:publisher" content="https://www.facebook.com/brensonoficial/" />
+	<meta property="article:modified_time" content="2024-10-29T18:31:34+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Tiempo de lectura" />
+	<meta name="twitter:data1" content="2 minutos" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.brenson.com.ar/servicio/","url":"https://www.brenson.com.ar/servicio/","name":"Servicio - Brenson","isPartOf":{"@id":"https://www.brenson.com.ar/#website"},"datePublished":"2021-10-21T14:24:39+00:00","dateModified":"2024-10-29T18:31:34+00:00","breadcrumb":{"@id":"https://www.brenson.com.ar/servicio/#breadcrumb"},"inLanguage":"es-AR","potentialAction":[{"@type":"ReadAction","target":["https://www.brenson.com.ar/servicio/"]}]},{"@type":"BreadcrumbList","@id":"https://www.brenson.com.ar/servicio/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://www.brenson.com.ar/"},{"@type":"ListItem","position":2,"name":"Servicio"}]},{"@type":"WebSite","@id":"https://www.brenson.com.ar/#website","url":"https://www.brenson.com.ar/","name":"Brenson","description":"","publisher":{"@id":"https://www.brenson.com.ar/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.brenson.com.ar/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"es-AR"},{"@type":"Organization","@id":"https://www.brenson.com.ar/#organization","name":"Brenson","url":"https://www.brenson.com.ar/","logo":{"@type":"ImageObject","inLanguage":"es-AR","@id":"https://www.brenson.com.ar/#/schema/logo/image/","url":"https://www.brenson.com.ar/wp-content/uploads/2021/10/cropped-logo_brenson-1.png","contentUrl":"https://www.brenson.com.ar/wp-content/uploads/2021/10/cropped-logo_brenson-1.png","width":500,"height":145,"caption":"Brenson"},"image":{"@id":"https://www.brenson.com.ar/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/brensonoficial/","https://www.instagram.com/brensonoficial/","https://www.linkedin.com/in/brenson-autos-s-a-0072b396?originalSubdomain=ar","https://api.whatsapp.com/send?phone=5491158140000"]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel='stylesheet' id='wp-block-library-css' href='https://www.brenson.com.ar/wp-includes/css/dist/block-library/style.min.css?ver=6.7' type='text/css' media='all' />
+<style id='joinchat-button-style-inline-css' type='text/css'>
+.wp-block-joinchat-button{border:none!important;text-align:center}.wp-block-joinchat-button figure{display:table;margin:0 auto;padding:0}.wp-block-joinchat-button figcaption{font:normal normal 400 .6em/2em var(--wp--preset--font-family--system-font,sans-serif);margin:0;padding:0}.wp-block-joinchat-button .joinchat-button__qr{background-color:#fff;border:6px solid #25d366;border-radius:30px;box-sizing:content-box;display:block;height:200px;margin:auto;overflow:hidden;padding:10px;width:200px}.wp-block-joinchat-button .joinchat-button__qr canvas,.wp-block-joinchat-button .joinchat-button__qr img{display:block;margin:auto}.wp-block-joinchat-button .joinchat-button__link{align-items:center;background-color:#25d366;border:6px solid #25d366;border-radius:30px;display:inline-flex;flex-flow:row nowrap;justify-content:center;line-height:1.25em;margin:0 auto;text-decoration:none}.wp-block-joinchat-button .joinchat-button__link:before{background:transparent var(--joinchat-ico) no-repeat center;background-size:100%;content:"";display:block;height:1.5em;margin:-.75em .75em -.75em 0;width:1.5em}.wp-block-joinchat-button figure+.joinchat-button__link{margin-top:10px}@media (orientation:landscape)and (min-height:481px),(orientation:portrait)and (min-width:481px){.wp-block-joinchat-button.joinchat-button--qr-only figure+.joinchat-button__link{display:none}}@media (max-width:480px),(orientation:landscape)and (max-height:480px){.wp-block-joinchat-button figure{display:none}}
+
+</style>
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link data-minify="1" rel='stylesheet' id='dexliqs-css' href='https://www.brenson.com.ar/wp-content/cache/min/1/wp-content/plugins/dexliqs/public/css/dexliqs-public.css?ver=1731351506' type='text/css' media='all' />
+<link rel='stylesheet' id='dexliqs_owl-css' href='https://www.brenson.com.ar/wp-content/plugins/dexliqs/public/../vendor/owl/assets/owl.carousel.min.css?ver=6.7' type='text/css' media='all' />
+<link rel='stylesheet' id='dvtmap-css' href='https://www.brenson.com.ar/wp-content/plugins/divit-mapa/public/css/dvtmap-public.css?ver=1.0.4' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='leaflet-css' href='https://www.brenson.com.ar/wp-content/cache/min/1/wp-content/plugins/divit-mapa/public/css/leaflet.css?ver=1731351506' type='text/css' media='all' />
+<link rel='stylesheet' id='leaflet-gesture-css' href='https://www.brenson.com.ar/wp-content/plugins/divit-mapa/public/css/leaflet-gesture-handling.min.css?ver=1.0.4' type='text/css' media='all' />
+<link rel='stylesheet' id='dvtchat-css' href='https://www.brenson.com.ar/wp-content/plugins/dvtchat/public/css/dvtchat-public.css?ver=1.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='dvtleads-css' href='https://www.brenson.com.ar/wp-content/plugins/dvtleads/public/css/dvtleads-public.css?ver=1.1.5' type='text/css' media='all' />
+<link rel='stylesheet' id='dvtlogleads-css' href='https://www.brenson.com.ar/wp-content/plugins/dvtlogleads/public/css/dvtlogleads-public.css?ver=1.1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='dvtmandemodel-css' href='https://www.brenson.com.ar/wp-content/plugins/dvtmandemodel/public/css/dvtmandemodel-public.css?ver=1.0.6' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='dvtpp-css' href='https://www.brenson.com.ar/wp-content/cache/min/1/wp-content/plugins/dvtpp/public/css/dvtpp-publics.css?ver=1731351506' type='text/css' media='all' />
+<link rel='stylesheet' id='dvtscl-css' href='https://www.brenson.com.ar/wp-content/plugins/dvtscl/public/css/dvtscl-public.css?ver=1.2.5' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='login-with-google-css' href='https://www.brenson.com.ar/wp-content/cache/min/1/wp-content/plugins/login-with-google/assets/build/css/login.css?ver=1731351506' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='gridable-css' href='https://www.brenson.com.ar/wp-content/cache/min/1/wp-content/themes/ford-theme-2021/core/gridable/public/css/gridable-style.css?ver=1731351506' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css' href='https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/vendor/bootstrap/css/bootstrap.min.css?ver=6.7' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='fontawesome-css' href='https://www.brenson.com.ar/wp-content/cache/min/1/wp-content/themes/ford-theme-2021/vendor/fontawesome/css/fontawesome-all.min.css?ver=1731351506' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='light-gallery-css' href='https://www.brenson.com.ar/wp-content/cache/min/1/wp-content/themes/ford-theme-2021/vendor/light-gallery/css/lightgallery.min.css?ver=1731351506' type='text/css' media='all' />
+<link rel='stylesheet' id='light-slider-css' href='https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/vendor/light-slider/css/lightslider.min.css?ver=6.7' type='text/css' media='all' />
+<link rel='stylesheet' id='snazzy-infowindow-css' href='https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/vendor/snazzy-infowindow/snazzy-info-window.min.css?ver=6.7' type='text/css' media='all' />
+<link rel='stylesheet' id='timepicker-css' href='https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/vendor/timepicker/jquery-ui-timepicker-addon.min.css?ver=6.7' type='text/css' media='all' />
+<link rel='stylesheet' id='jquery-ui-css' href='https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/vendor/jquery-ui/jquery-ui.min.css?ver=6.7' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='swiper-css' href='https://www.brenson.com.ar/wp-content/cache/min/1/wp-content/themes/ford-theme-2021/vendor/swiper/css/swiper.min.css?ver=1731351506' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='simplebar-css' href='https://www.brenson.com.ar/wp-content/cache/min/1/wp-content/themes/ford-theme-2021/vendor/simplebar/simplebar.css?ver=1731351506' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='style-css' href='https://www.brenson.com.ar/wp-content/cache/min/1/wp-content/themes/ford-theme-2021/style.css?ver=1731351506' type='text/css' media='all' />
+<link rel='stylesheet' id='owl-css' href='https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/vendor/owl/assets/owl.carousel.min.css?ver=6.7' type='text/css' media='all' />
+<link rel='stylesheet' id='joinchat-css' href='https://www.brenson.com.ar/wp-content/plugins/creame-whatsapp-me/public/css/joinchat-btn.min.css?ver=5.1.8' type='text/css' media='all' />
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-includes/js/jquery/jquery.min.js?ver=3.7.1&#039; defer data-defer=&#039;true" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1&#039; defer data-defer=&#039;true" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/plugins/dexliqs/public/js/dexliqs-public.js?ver=1.1.1&#039; defer data-defer=&#039;true" id="dexliqs-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/plugins/dexliqs/public/../vendor/owl/owl.carousel.min.js?ver=6.7&#039; defer data-defer=&#039;true" id="dexliqs_owl-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/plugins/divit-mapa/public/js/dvtmap-public.js?ver=1.0.4&#039; defer data-defer=&#039;true" id="dvtmap-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/plugins/divit-mapa/public/js/leaflet.js?ver=6.7&#039; defer data-defer=&#039;true" id="leaflet-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/plugins/divit-mapa/public/js/leaflet-gesture-handling.min.js?ver=6.7&#039; defer data-defer=&#039;true" id="leaflet-gesture-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/plugins/dvtleads/public/js/dvtleads-public.js?ver=1.1.5&#039; defer data-defer=&#039;true" id="dvtleads-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/plugins/dvtlogleads/public/js/dvtlogleads-public.js?ver=1.1.0&#039; defer data-defer=&#039;true" id="dvtlogleads-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/plugins/dvtmandemodel/public/js/dvtmandemodel-public.js?ver=1.0.6&#039; defer data-defer=&#039;true" id="dvtmandemodel-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/plugins/dvtpp/public/js/dvtpp-public.js?ver=1.1.1&#039; defer data-defer=&#039;true" id="dvtpp-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/plugins/dvtscl/public/js/dvtscl-public.js?ver=1.2.5&#039; defer data-defer=&#039;true" id="dvtscl-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/core/gridable/public/js/gridable-scripts.js?ver=1.2.3&#039; defer data-defer=&#039;true" id="gridable-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/vendor/jquery-ui/jquery-ui.min.js?ver=6.7&#039; defer data-defer=&#039;true" id="jquery-ui-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/vendor/bootstrap/js/bootstrap.bundle.min.js?ver=6.7&#039; defer data-defer=&#039;true" id="bootstrap-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/vendor/light-gallery/js/lightgallery-all.min.js?ver=6.7&#039; defer data-defer=&#039;true" id="light-gallery-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/vendor/light-slider/js/lightslider.min.js?ver=6.7&#039; defer data-defer=&#039;true" id="light-slider-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/vendor/snazzy-infowindow/snazzy-info-window.min.js?ver=6.7&#039; defer data-defer=&#039;true" id="snazzy-infowindow-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/vendor/timepicker/jquery-ui-timepicker-addon.min.js?ver=6.7&#039; defer data-defer=&#039;true" id="timepicker-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/vendor/timepicker/i18n/jquery-ui-timepicker-es.js?ver=6.7&#039; defer data-defer=&#039;true" id="timepicker-es-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/vendor/fitty/fitty.min.js?ver=6.7&#039; defer data-defer=&#039;true" id="fitty-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/vendor/swiper/js/swiper.min.js?ver=6.7&#039; defer data-defer=&#039;true" id="swiper-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/js/elements.js?v=1.0&amp;ver=6.7&#039; defer data-defer=&#039;true" id="elements-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/js/salesforce.js?ver=6.7&#039; defer data-defer=&#039;true" id="salesforce-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/js/tecnom.js?ver=6.7&#039; defer data-defer=&#039;true" id="tecnom-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/js/pilote.js?ver=6.7&#039; defer data-defer=&#039;true" id="pilot-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/js/global_js.js?ver=6.7&#039; defer data-defer=&#039;true" id="global_js-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/vendor/simplebar/simplebar.min.js?ver=6.7&#039; defer data-defer=&#039;true" id="simplebar-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/vendor/owl/owl.carousel.min.js?ver=6.7&#039; defer data-defer=&#039;true" id="owl-js"></script>
+<link rel="https://api.w.org/" href="https://www.brenson.com.ar/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.brenson.com.ar/wp-json/wp/v2/pages/103" /><meta name="generator" content="WordPress 6.7" />
+<link rel='shortlink' href='https://www.brenson.com.ar/?p=103' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.brenson.com.ar/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.brenson.com.ar%2Fservicio%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.brenson.com.ar/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.brenson.com.ar%2Fservicio%2F&#038;format=xml" />
+<script>(function(w, d) { w.CollectId = "64f8c8bb8a3fde15c3ecda23"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
+<!-- This file should primarily consist of HTML with a little bit of PHP. -->
+<script type="text/javascript">
+    function loadAsync(e,a){var t=document.createElement('script');t.src=e,null!==a&&(t.readyState?t.onreadystatechange=function(){'loaded'!==t.readyState&&'complete'!==t.readyState||(t.onreadystatechange=null,a())}:t.onload=function(){a()}),document.getElementsByTagName('head')[0].appendChild(t)};
+    var collectchat = collectchat || {};
+    collectchat.ready = function () {
+        //carga de datos para configuracion
+        window.dvtfcachatconfig = {
+            'version' :7,
+            'collectchat':collectchat,
+            'ready': function(collectchat,chatLocal){ 
+                chatLocal.setUrlSitio('https://www.brenson.com.ar');
+                //debug
+                                //INICIO SCRIPT DEL BACKEND
+chatLocal.setTargetBlank(true);
+//SUCURSALES:
+const CENTRAL_CABALLITO = 'CASA CENTRAL CABALLITO';
+const BARILOCHE = 'BARILOCHE';
+const VTE_LOPEZ = 'VICENTE LOPEZ';
+const RECOVA = 'RECOVA';
+const CETRAL_POSVENTA = 'CASA CENTRAL CABALLITO - POST VENTA';
+const VTE_LOPEZ_POSVENTA = 'VICENTE LOPEZ - POST VENTA';
+
+const MENSAJE_0KM = 'Hola mi nombre es %ceroKMnombreApellido% estoy interesado en adquirir un vehículo modelo %ceroKMmodelo% en la Sucursal %ceroKMsucursal%.  Quisiera entregar un vehículo usado como parte de pago (%autoUsado%). A fin de que se puedan contactar les dejo  mi  correo electrónico %ceroKMemail%  y mi  telefono %ceroKMtelefono%. Me gustaría que me contacten ahora por whatsApp.';
+chatLocal.agregarMensaje(MENSAJE_0KM);
+const MENSAJE_PLAN_OVALO = 'Hola mi nombre es %planOvaloNombre% quisiera consultar por un plan de ahorro para el modelo %planOvaloModelo% en la Sucursal %planOvaloSucursal%. A fin de que se puedan contactar les dejo  mi  correo electrónico %planOvaloEmail%  y mi  teléfono %planOvaloTelefono%. Me gustaria que me contacten ahora por whatsApp.';
+chatLocal.agregarMensaje(MENSAJE_PLAN_OVALO);
+const MENSAJE_TURNO_TALLER = 'Hola, mi nombre es %tallerNombreApellido%. Quisiera solicitar un turno para taller en la sucursal %tallerSucursal%. De ser posible el día %tallerTurno%. A fin de que se puedan contactar les dejo mi correo electrónico %tallerEmail% y mi  teléfono %tallerTelefono%. Me gustaría que me contacten ahora por WhatsApp';
+chatLocal.agregarMensaje(MENSAJE_TURNO_TALLER);
+const MENSAJE_REPUESTOS = 'Hola mi nombre es %RepuestoNombreApellido% estoy interesado en adquirir un repuesto %RepuestoDetalle%, en la sucursal %RepuestoSucursal%, adjunto una imagen %RepuestoFoto% . A fin de que se puedan contactar les dejo  mi  correo electrónico %RepuestoEmail% y mi  teléfono %RepuestoTelefono%. Me gustaria que me contacten ahora por whatsApp.';
+chatLocal.agregarMensaje(MENSAJE_REPUESTOS);
+
+//redefiniendo la pregunta de Plane de ahorro
+chatLocal.setRespuestaMotivoPlanAhorro('PLAN OVALO');
+
+//VENTAS CONVENCIONAL
+const ID_CENTRAL_CONV = 'F3C892B6-E32E-45C8-8179-274B0344866E';
+const ID_BARILOCHE_CONV = '3EEF4D81-86F8-4796-B8D4-82951501F0F4';
+const ID_VTE_LOPEZ_CONV = '7F03020E-4CA5-4EDA-9E44-4262F2DAC664';
+const ID_RECOVA_CONV = '7E9BC9E2-72B0-4402-B000-F68ABDAAFA3F';
+chatLocal.agregarPregunta('CB6AAC00-3398-4B36-A0C8-2E017838E1E6','ceroKMmodelo');
+chatLocal.agregarPregunta('F18094DA-0944-4F89-B8CE-74B10D1E4292','autoUsado');
+chatLocal.agregarPregunta('9707B3A0-EC04-4FA4-A4FE-EFF2E88D143A','ceroKMnombreApellido');
+chatLocal.agregarPregunta('350C457F-3175-402D-892C-DD9941D50732','ceroKMtelefono');
+chatLocal.agregarPregunta('FBC8C551-CEAE-4860-87BB-D8DB68BDC862','ceroKMemail');
+chatLocal.agregarPregunta('6136F6C0-B451-4E64-ADFA-B37F15DC8D79','ceroKMsucursal');
+//PLAN OVALO
+const ID_CENTRAL_PLAN = 'CE1B1BB9-95D9-4FB4-B7D3-789370DE9D64';
+const ID_BARILOCHE_PLAN = '998A1C26-A5CB-47C3-8E61-C1F89E70D0EB';
+const ID_VTE_LOPEZ_PLAN = '25C57C13-171B-4EEB-86C4-951A52886AFF';
+const ID_RECOVA_PLAN = '30ED4868-4859-4FC9-A928-A8C5E55BEC04';
+chatLocal.agregarPregunta('79D963E5-4110-472D-A1EC-52AFD9B8C646','planOvaloModelo');
+chatLocal.agregarPregunta('2C2BF296-A7C9-4BE6-ABED-36FFC118D374','planOvaloNombre');
+chatLocal.agregarPregunta('E7C605F0-626D-4282-A70E-4DAEB4CD9380','planOvaloTelefono');
+chatLocal.agregarPregunta('76324BBF-00D4-4507-BB1A-E8602D1C961E','planOvaloEmail');
+chatLocal.agregarPregunta('9A324F09-00CE-48AC-9677-9934FA50AB5F','planOvaloSucursal');
+//TURNOS TALLER
+const ID_CETRAL_POSVENTA_TALLER = '76459E24-7020-4E08-B0F3-53FA9AE9E065';
+const ID_VTE_LOPEZ_POSVENTA_TALLER = 'B1946799-C88F-435C-80AC-8075CD5F6712';
+chatLocal.agregarPregunta('6EC69CEA-8852-4F6E-B230-1B0A238FA54F','tallerTurno');
+chatLocal.agregarPregunta('066465DA-D515-4CCD-887C-4A17AD4AD5D8','tallerNombreApellido');
+chatLocal.agregarPregunta('0FB5948B-87F7-4813-8771-0B7754F1618C','tallerPatente');
+chatLocal.agregarPregunta('0FB5948B-87F7-4813-8771-0B7754F1618C','tallerTelefono');
+chatLocal.agregarPregunta('14C6E8D7-371B-439C-A8A8-67D1FBA24320','tallerEmail');
+chatLocal.agregarPregunta('D392E423-2871-479C-9898-76B291C2529A','tallerSucursal');
+//REPUESTOS
+const ID_CETRAL_POSVENTA_REP = '43D5CD18-29C4-4764-B4A6-781587D8646B';
+const ID_VTE_LOPEZ_POSVENTA_REP = '182E74B0-6499-4C23-85AC-673A4F6A86F3';
+chatLocal.agregarPregunta('2C673F9B-09EF-4B41-A8E4-2113DF921113','RepuestoDetalle');
+chatLocal.agregarPregunta('88652716-FEE7-4CAD-BAC7-4AC1C2292C6E','RepuestoFoto');
+chatLocal.agregarPregunta('FEAD88CF-7CF7-492B-B5B0-7CB3F4132B8F','RepuestoNombreApellido');
+chatLocal.agregarPregunta('068DE904-6029-4030-8480-60EF7E3C0A8D','RepuestoTelefono');
+chatLocal.agregarPregunta('1D82C07E-6764-449F-9373-200D1F3C9C5E','RepuestoEmail');
+chatLocal.agregarPregunta('2B5C20A7-1D94-4248-850E-800676D1A15F','RepuestoSucursal');
+
+//RAMA CONVENCIONAL: SUCURSAL - NÚMERO DE WA.
+chatLocal.agregarPreguntaSucursalMedioConvencional(ID_CENTRAL_CONV,CENTRAL_CABALLITO);
+chatLocal.agregarRespuestaWhatsAppGenerica(ID_CENTRAL_CONV,'+5491158140000');
+chatLocal.agregarPreguntaSucursalMedioConvencional(ID_BARILOCHE_CONV,BARILOCHE);
+chatLocal.agregarRespuestaWhatsAppGenerica(ID_BARILOCHE_CONV,'+5491158140000');
+chatLocal.agregarPreguntaSucursalMedioConvencional(ID_VTE_LOPEZ_CONV,VTE_LOPEZ);
+chatLocal.agregarRespuestaWhatsAppGenerica(ID_VTE_LOPEZ_CONV,'+5491158140000');
+chatLocal.agregarPreguntaSucursalMedioConvencional(ID_RECOVA_CONV,RECOVA);
+chatLocal.agregarRespuestaWhatsAppGenerica(ID_RECOVA_CONV,'+5491158140000');
+//RAMA PLANES: SUCURSAL - NÚMERO DE WA.
+chatLocal.agregarPreguntaSucursalMedioPlan(ID_CENTRAL_PLAN,CENTRAL_CABALLITO);
+chatLocal.agregarRespuestaWhatsAppGenerica(ID_CENTRAL_PLAN,'+5491158140000');
+chatLocal.agregarPreguntaSucursalMedioPlan(ID_BARILOCHE_PLAN,BARILOCHE);
+chatLocal.agregarRespuestaWhatsAppGenerica(ID_BARILOCHE_PLAN,'+5491158140000');
+chatLocal.agregarPreguntaSucursalMedioPlan(ID_VTE_LOPEZ_PLAN,VTE_LOPEZ);
+chatLocal.agregarRespuestaWhatsAppGenerica(ID_VTE_LOPEZ_PLAN,'+5491158140000');
+chatLocal.agregarPreguntaSucursalMedioPlan(ID_RECOVA_PLAN,RECOVA);
+chatLocal.agregarRespuestaWhatsAppGenerica(ID_RECOVA_PLAN,'+5491158140000');
+//RAMA TALLER: SUCURSAL - NÚMERO DE WA.
+chatLocal.agregarPreguntaSucursalMedioTaller(ID_CETRAL_POSVENTA_TALLER,CENTRAL_CABALLITO);
+chatLocal.agregarRespuestaWhatsAppGenerica(ID_CETRAL_POSVENTA_TALLER,'+5491135723680');
+chatLocal.agregarPreguntaSucursalMedioTaller(ID_VTE_LOPEZ_POSVENTA_TALLER,VTE_LOPEZ);
+chatLocal.agregarRespuestaWhatsAppGenerica(ID_VTE_LOPEZ_POSVENTA_TALLER,'+5491167273286');
+//RAMA REPUESTOS Y ACCESORIOS: SUCURSAL - NÚMERO DE WA.
+chatLocal.agregarPreguntaSucursalMedioRepuestos(ID_CETRAL_POSVENTA_REP,CENTRAL_CABALLITO);
+chatLocal.agregarRespuestaWhatsAppGenerica(ID_CETRAL_POSVENTA_REP,'+5491158140000');
+chatLocal.agregarPreguntaSucursalMedioRepuestos(ID_VTE_LOPEZ_POSVENTA_REP,VTE_LOPEZ);
+chatLocal.agregarRespuestaWhatsAppGenerica(ID_VTE_LOPEZ_POSVENTA_REP,'+5491158140000');
+
+//FIN DE SCRIPT DEL BACKEND                chatLocal.loadCompleteCallback();
+                //callbacks
+                collectchat.on("open", function(){chatLocal.openCallback();});
+                collectchat.on("complete", function(){ chatLocal.completeCallback();});
+                collectchat.on("message", function(details){chatLocal.messageCallback(details);});
+            }};
+        //carga del script
+        loadAsync("https://www.brenson.com.ar/wp-content/plugins/dvtchat/public/js/dvtchat-public.js",function(){});
+    };
+</script><script type="text/javascript">var CollectChatWordpress = true;</script><!-- HFCM by 99 Robots - Snippet # 1: Meta - google tag Verification -->
+<meta name="google-site-verification" content="NXJLONFu8K00A19Rim2FUTuelr3nPgHvo6k2lj4HqJI" />
+<!-- /end HFCM by 99 Robots -->
+<!-- HFCM by 99 Robots - Snippet # 2: Google Analytics Code -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W8F2YPT1LV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W8F2YPT1LV');
+</script>
+<!-- /end HFCM by 99 Robots -->
+<!-- HFCM by 99 Robots - Snippet # 3: Facebook Pixel Code -->
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '186027290277933');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=186027290277933&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+<!-- /end HFCM by 99 Robots -->
+<!-- HFCM by 99 Robots - Snippet # 4: Google Tag Manager -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NNPF7F');</script>
+<!-- End Google Tag Manager -->
+<!-- /end HFCM by 99 Robots -->
+<link rel="icon" href="https://www.brenson.com.ar/wp-content/uploads/2021/10/favicon.png" sizes="32x32" />
+<link rel="icon" href="https://www.brenson.com.ar/wp-content/uploads/2021/10/favicon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.brenson.com.ar/wp-content/uploads/2021/10/favicon.png" />
+<meta name="msapplication-TileImage" content="https://www.brenson.com.ar/wp-content/uploads/2021/10/favicon.png" />
+		<style type="text/css" id="wp-custom-css">
+			.main-header .main-header--brand .name{
+	display: none !important;
+}
+
+.custom-input input[type="text"] {
+	width:100%;
+}
+
+.postid-156 .mobile{
+  display: inline-flex;
+}
+@media(max-width:768px){
+.postid-156 .mobile{
+  display: block;
+ }
+}
+
+.postid-222 .card-accordion .card-accordion--header button {
+    width: 100%;
+    color: black;
+    text-align: left;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 0;
+    cursor: pointer;
+    outline: none;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    background: transparent;
+}
+
+.postid-222 .card-accordion .card-body {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.postid-222 .card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+
+.postid-222 .card-accordion {
+    position: relative;
+}
+
+.main-header--data div.data-icon:first-child img, .main-header--data div.data-icon:first-child span {
+    display: none!important;
+}
+
+.logo img{
+	display:none;
+}
+
+.logo {
+    background-image: url(/wp-content/uploads/2021/10/cropped-logo_brenson-2.png);
+    width: 211px;
+    height: 46px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 1200px){
+.main-footer .logo {
+    width: 70%;
+}
+	}
+.card-sucursal-2{height:100%}
+.postid-103 .btn-blue  span {}
+.postid-103 .fa-whatsapp {padding-right: 13px;font-size: 1.4em;}
+
+.postid-156 input[name="formdatacrm[patente]"] {
+    display: none;
+}
+
+.btn-wa {
+	background-color: #25D366
+}
+
+.btn-wa:hover {
+	background-color: #128C7E 
+}
+
+.flex-container {
+	display: flex;
+	flex-direction: row;
+	font-size: 30px;
+	text-align: center;
+}
+
+.flex-item-left {
+	display: flex;
+	padding: 10px;
+	flex: 50%;
+}
+
+.flex-item-right {
+	display: flex;
+	padding: 10px;
+	flex: 50%;
+}
+
+/*.suc-marg-t{margin-top: 6rem;}*/
+
+/* Responsive layout */
+@media (max-width: 800px) {
+	.suc-marg-t{margin-top: 3rem;}
+	.flex-container {
+		flex-direction: column;
+	}
+	.flex-item-right {
+		display: block;
+	}
+	.flex-item-left {
+		display: block;
+	}
+}
+
+/*Arreglo logo footer*/
+.main-footer .logo {
+	width: 60% !important;
+}
+
+.dvt-terminos-condiciones {
+	right: 7.7rem !important;
+}
+
+/*Joinchat*/
+.joinchat__button{
+right: 0px !important;
+left: auto !important;
+bottom: 4.5em !important;
+position: fixed !important
+}
+@media (max-width: 800px) {
+   .joinchat__button {
+        right: 14px !important;
+	}}		</style>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><meta name="generator" content="WP Rocket 3.17.2" data-wpr-features="wpr_lazyload_images wpr_oci wpr_image_dimensions wpr_minify_css wpr_desktop wpr_preload_links" /></head>
+
+<body class="page-template-default single single-page postid-103 wp-custom-logo" data-ajaxurl="https://www.brenson.com.ar/wp-admin/admin-ajax.php" data-crm="Tecnom">
+
+  <div  class="back-top"><i class="fa fa-angle-up"></i></div>
+  <header  class="main-header">
+    <div  class="main-header--top">
+      <div  class="container">
+        <div class="main-header--brand">
+          <a href="https://www.brenson.com.ar">
+                                      <div class="logo">
+                <img width="500" height="145" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20145'%3E%3C/svg%3E" alt="Brenson" data-lazy-src="https://www.brenson.com.ar/wp-content/uploads/2021/10/cropped-logo_brenson-1.png"><noscript><img width="500" height="145" src="https://www.brenson.com.ar/wp-content/uploads/2021/10/cropped-logo_brenson-1.png" alt="Brenson"></noscript>
+              </div>
+            
+            <div class="name">
+              <div class="title">
+                Brenson              </div>
+                          </div>
+          </a>
+        </div>
+        <nav class="main-header--nav">
+          <ul id="menu-menu-1" class="menu"><li id="menu-item-693" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-693"><a href="/pickups_suvs/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Vehículos">Vehículos</a>
+<ul class="sub-menu">
+	<li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-paginasimple menu-item-33"><a href="https://www.brenson.com.ar/autos/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Autos">Autos</a></li>
+	<li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-paginasimple menu-item-34"><a href="https://www.brenson.com.ar/pickups_suvs/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Pickups &#038; Suvs">Pickups &#038; Suvs</a></li>
+	<li id="menu-item-35" class="menu-item menu-item-type-post_type menu-item-object-paginasimple menu-item-35"><a href="https://www.brenson.com.ar/utilitarios/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Utilitarios">Utilitarios</a></li>
+</ul>
+</li>
+<li id="menu-item-86" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-86"><a href="https://www.brenson.com.ar/plan-ovalo/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Plan ovalo">Plan ovalo</a>
+<ul class="sub-menu">
+	<li id="menu-item-316" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-316"><a href="https://www.brenson.com.ar/modelos/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Modelos">Modelos</a></li>
+	<li id="menu-item-309" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-309"><a href="https://www.brenson.com.ar/que-es-plan-ovalo/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="¿Qué es Plan Ovalo?">¿Qué es Plan Ovalo?</a></li>
+</ul>
+</li>
+<li id="menu-item-140" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-140"><a href="/turno/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Posventa">Posventa</a>
+<ul class="sub-menu">
+	<li id="menu-item-135" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-135"><a href="https://www.brenson.com.ar/turno/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Solicita turno">Solicita turno</a></li>
+	<li id="menu-item-347" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-103 current_page_item menu-item-347"><a href="https://www.brenson.com.ar/servicio/" aria-current="page" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Servicios">Servicios</a></li>
+	<li id="menu-item-209" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-209"><a href="https://www.brenson.com.ar/accesorio/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Accesorios">Accesorios</a></li>
+	<li id="menu-item-146" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146"><a href="https://www.brenson.com.ar/repuestos/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Repuestos">Repuestos</a></li>
+</ul>
+</li>
+<li id="menu-item-238" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-238"><a target="_blank" href="https://vehiculos.mercadolibre.com.ar/_CustId_141678357" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Usados">Usados</a></li>
+<li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-paginasimple menu-item-has-children menu-item-31"><a href="https://www.brenson.com.ar/quienes_somos/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Nuestra empresa">Nuestra empresa</a>
+<ul class="sub-menu">
+	<li id="menu-item-167" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-167"><a href="https://www.brenson.com.ar/ventas-corporativas/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Ventas Corporativas">Ventas Corporativas</a></li>
+	<li id="menu-item-102" class="menu-item menu-item-type-post_type menu-item-object-paginasimple menu-item-102"><a href="https://www.brenson.com.ar/quienes_somos/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Brenson">Brenson</a></li>
+	<li id="menu-item-1225" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1225"><a href="https://taraborelli.hiringroom.com/jobs" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Sumate a Brenson">Sumate a Brenson</a></li>
+	<li id="menu-item-38" class="menu-item menu-item-type-post_type menu-item-object-paginasimple menu-item-38"><a href="https://www.brenson.com.ar/contacto/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Contacto">Contacto</a></li>
+</ul>
+</li>
+<li id="menu-item-296" class="menu-item menu-item-type-post_type menu-item-object-paginasimple menu-item-296"><a href="https://www.brenson.com.ar/contacto/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Sucursales">Sucursales</a></li>
+<li id="menu-item-1130" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1130"><a href="https://taraborellirentacar.com/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Alquiler de Vehículos">Alquiler de Vehículos</a></li>
+</ul>        </nav>
+        <div class="main-header--mobile">
+          <button class="btn-menu js-btn-menu"><img width="22" height="12" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2022%2012'%3E%3C/svg%3E" alt="" data-lazy-src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/menu.svg"><noscript><img width="22" height="12" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/menu.svg" alt=""></noscript></button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- header Azul Sucursales -->
+    <nav class="main-header--bottom" data-simplebar>
+      <div class="container container-azul">
+
+        <!-- Data Sucursales -->
+        <div class="main-header--data" style="width: 70%;">
+          <div class="swiper-container home-map--sucursales barra-azul-carousel">
+            <div class="swiper-wrapper">
+                              <div class="swiper-slide" style="display: flex;align-content: center;flex-wrap: wrap; width: auto;">
+                  <article class="card-sucursal" id="btn-marker-103" style="margin: auto; width: auto">
+                    <div class="card-sucursal--atencion" style="">
+                      <!-- title suc -->
+                      <ul style="display: flex; margin-bottom: 0px; padding: 1px 29px 0px 29px;">
+                                                  <li class="data-icon">
+                            <span class="span-title">DIGITAL</span>
+                          </li>
+                                                                          <li class="data-icon">
+                            <img width="24" height="24" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3C/svg%3E" alt="Dirección" data-lazy-src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-place.svg"><noscript><img width="24" height="24" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-place.svg" alt="Dirección"></noscript>
+                            <span> Contactanos desde cualquier lugar del país. </span>
+                          </li>
+                                                                          <li class="data-icon">
+                            <img width="24" height="24" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3C/svg%3E" alt="Atención" data-lazy-src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-time.svg"><noscript><img width="24" height="24" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-time.svg" alt="Atención"></noscript>
+                            <span style="max-width: 100%"> Si sos del interior del país. </span>
+                          </li>
+                                              </ul>
+                    </div>
+                  </article>
+                </div>
+                              <div class="swiper-slide" style="display: flex;align-content: center;flex-wrap: wrap; width: auto;">
+                  <article class="card-sucursal" id="btn-marker-103" style="margin: auto; width: auto">
+                    <div class="card-sucursal--atencion" style="">
+                      <!-- title suc -->
+                      <ul style="display: flex; margin-bottom: 0px; padding: 1px 29px 0px 29px;">
+                                                  <li class="data-icon">
+                            <span class="span-title">VTE. LóPEZ - POSTVENTA</span>
+                          </li>
+                                                                          <li class="data-icon">
+                            <img width="24" height="24" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3C/svg%3E" alt="Dirección" data-lazy-src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-place.svg"><noscript><img width="24" height="24" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-place.svg" alt="Dirección"></noscript>
+                            <span> Av. Mitre 364, Vicente López </span>
+                          </li>
+                                                                          <li class="data-icon">
+                            <img width="24" height="24" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3C/svg%3E" alt="Atención" data-lazy-src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-time.svg"><noscript><img width="24" height="24" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-time.svg" alt="Atención"></noscript>
+                            <span style="max-width: 100%"> Horario: Lunes a Viernes de 8:00 a 12.30 y 13.30 18:00hs. </span>
+                          </li>
+                                              </ul>
+                    </div>
+                  </article>
+                </div>
+                              <div class="swiper-slide" style="display: flex;align-content: center;flex-wrap: wrap; width: auto;">
+                  <article class="card-sucursal" id="btn-marker-103" style="margin: auto; width: auto">
+                    <div class="card-sucursal--atencion" style="">
+                      <!-- title suc -->
+                      <ul style="display: flex; margin-bottom: 0px; padding: 1px 29px 0px 29px;">
+                                                  <li class="data-icon">
+                            <span class="span-title">CABALLITO POSVENTA</span>
+                          </li>
+                                                                          <li class="data-icon">
+                            <img width="24" height="24" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3C/svg%3E" alt="Dirección" data-lazy-src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-place.svg"><noscript><img width="24" height="24" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-place.svg" alt="Dirección"></noscript>
+                            <span> Av. Rivadavia 6111, CABA </span>
+                          </li>
+                                                                          <li class="data-icon">
+                            <img width="24" height="24" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3C/svg%3E" alt="Atención" data-lazy-src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-time.svg"><noscript><img width="24" height="24" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-time.svg" alt="Atención"></noscript>
+                            <span style="max-width: 100%"> Horario: Lunes a Viernes de 8:00 a 12:30 y de 13:30 a 18:00hs. </span>
+                          </li>
+                                              </ul>
+                    </div>
+                  </article>
+                </div>
+                              <div class="swiper-slide" style="display: flex;align-content: center;flex-wrap: wrap; width: auto;">
+                  <article class="card-sucursal" id="btn-marker-103" style="margin: auto; width: auto">
+                    <div class="card-sucursal--atencion" style="">
+                      <!-- title suc -->
+                      <ul style="display: flex; margin-bottom: 0px; padding: 1px 29px 0px 29px;">
+                                                  <li class="data-icon">
+                            <span class="span-title">RECOVA</span>
+                          </li>
+                                                                          <li class="data-icon">
+                            <img width="24" height="24" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3C/svg%3E" alt="Dirección" data-lazy-src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-place.svg"><noscript><img width="24" height="24" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-place.svg" alt="Dirección"></noscript>
+                            <span> Cerrito 1591, Recoleta </span>
+                          </li>
+                                                                          <li class="data-icon">
+                            <img width="24" height="24" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3C/svg%3E" alt="Atención" data-lazy-src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-time.svg"><noscript><img width="24" height="24" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-time.svg" alt="Atención"></noscript>
+                            <span style="max-width: 100%"> Lunes a Viernes de 9:00a 19:00hs | Sábados de 9:00 a 18:00hs </span>
+                          </li>
+                                              </ul>
+                    </div>
+                  </article>
+                </div>
+                              <div class="swiper-slide" style="display: flex;align-content: center;flex-wrap: wrap; width: auto;">
+                  <article class="card-sucursal" id="btn-marker-103" style="margin: auto; width: auto">
+                    <div class="card-sucursal--atencion" style="">
+                      <!-- title suc -->
+                      <ul style="display: flex; margin-bottom: 0px; padding: 1px 29px 0px 29px;">
+                                                  <li class="data-icon">
+                            <span class="span-title">VICENTE LóPEZ</span>
+                          </li>
+                                                                          <li class="data-icon">
+                            <img width="24" height="24" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3C/svg%3E" alt="Dirección" data-lazy-src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-place.svg"><noscript><img width="24" height="24" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-place.svg" alt="Dirección"></noscript>
+                            <span> Av. Mitre 364 Vicente Lopez GBA </span>
+                          </li>
+                                                                          <li class="data-icon">
+                            <img width="24" height="24" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3C/svg%3E" alt="Atención" data-lazy-src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-time.svg"><noscript><img width="24" height="24" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-time.svg" alt="Atención"></noscript>
+                            <span style="max-width: 100%"> Horario: L a V de 09:00 a 19:00hs y Sábados de 09:00 a 18:00hs. Feriados: 10:00 a 18:00hs </span>
+                          </li>
+                                              </ul>
+                    </div>
+                  </article>
+                </div>
+                              <div class="swiper-slide" style="display: flex;align-content: center;flex-wrap: wrap; width: auto;">
+                  <article class="card-sucursal" id="btn-marker-103" style="margin: auto; width: auto">
+                    <div class="card-sucursal--atencion" style="">
+                      <!-- title suc -->
+                      <ul style="display: flex; margin-bottom: 0px; padding: 1px 29px 0px 29px;">
+                                                  <li class="data-icon">
+                            <span class="span-title">BARILOCHE</span>
+                          </li>
+                                                                          <li class="data-icon">
+                            <img width="24" height="24" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3C/svg%3E" alt="Dirección" data-lazy-src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-place.svg"><noscript><img width="24" height="24" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-place.svg" alt="Dirección"></noscript>
+                            <span> Cmte. Luis Piedrabuena 6038 San Carlos de Bariloche </span>
+                          </li>
+                                                                          <li class="data-icon">
+                            <img width="24" height="24" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3C/svg%3E" alt="Atención" data-lazy-src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-time.svg"><noscript><img width="24" height="24" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-time.svg" alt="Atención"></noscript>
+                            <span style="max-width: 100%"> Horario: Lunes a Viernes de 09:00 a 18:00hs y Sábados de 09:00 a 13:00hs </span>
+                          </li>
+                                              </ul>
+                    </div>
+                  </article>
+                </div>
+                              <div class="swiper-slide" style="display: flex;align-content: center;flex-wrap: wrap; width: auto;">
+                  <article class="card-sucursal" id="btn-marker-103" style="margin: auto; width: auto">
+                    <div class="card-sucursal--atencion" style="">
+                      <!-- title suc -->
+                      <ul style="display: flex; margin-bottom: 0px; padding: 1px 29px 0px 29px;">
+                                                  <li class="data-icon">
+                            <span class="span-title">CASA CENTRAL CABALLITO</span>
+                          </li>
+                                                                          <li class="data-icon">
+                            <img width="24" height="24" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3C/svg%3E" alt="Dirección" data-lazy-src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-place.svg"><noscript><img width="24" height="24" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-place.svg" alt="Dirección"></noscript>
+                            <span> Av. Rivadavia 6111 - CABA </span>
+                          </li>
+                                                                          <li class="data-icon">
+                            <img width="24" height="24" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3C/svg%3E" alt="Atención" data-lazy-src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-time.svg"><noscript><img width="24" height="24" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/icon-time.svg" alt="Atención"></noscript>
+                            <span style="max-width: 100%"> Horario: L a V de 09:00 a 19:00hs y Sábados 09:00 a 17:00hs. Feriados: 10 a 18hs </span>
+                          </li>
+                                              </ul>
+                    </div>
+                  </article>
+                </div>
+              
+                          </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+
+        <!-- Botones Redes -->
+        <div class="main-header--social">
+          <a href="https://www.facebook.com/brensonoficial/" target="_blank"><i class="fab fa-fw fa-facebook"></i></a><a href="https://www.instagram.com/brensonoficial/" target="_blank"><i class="fab fa-fw fa-instagram"></i></a><a href="https://api.whatsapp.com/send?phone=5491158140000" target="_blank"><i class="fab fa-fw fa-whatsapp"></i></a><a href="https://www.linkedin.com/in/brenson-autos-s-a-0072b396?originalSubdomain=ar" target="_blank"><i class="fab fa-fw fa-linkedin"></i></a>        </div>
+
+      </div>
+    </nav>
+    <!-- header Azul Sucursales -->
+  </header>            <div  class="msg-input"></div>
+
+        <main  class="page-turno">
+                        		<header  class="page-head">
+
+			<div  class="page-head--content">
+				<article class="swiper-container swiper-custom-arrows" id="js-head-content">
+					<div class="swiper-wrapper">
+
+													<div class="swiper-slide">
+								<div class="head-item full">
+									<img width="1920" height="728" data-src="https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORDPASS-1920x728.jpg" style="width: 100%;" class="swiper-lazy attachment-full-slider size-full-slider" alt="" decoding="async" fetchpriority="high" data-srcset="https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORDPASS-1920x728.jpg 1920w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORDPASS-300x114.jpg 300w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORDPASS-1024x388.jpg 1024w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORDPASS-768x291.jpg 768w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORDPASS-1536x583.jpg 1536w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORDPASS-2048x777.jpg 2048w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORDPASS-500x190.jpg 500w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORDPASS-1250x474.jpg 1250w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORDPASS-1500x569.jpg 1500w" sizes="(max-width: 1920px) 100vw, 1920px" />																	</div>
+								<div class="swiper-lazy-preloader"></div>
+							</div>
+													<div class="swiper-slide">
+								<div class="head-item full">
+									<img width="1920" height="728" data-src="https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORD-PROTECT-1920x728.jpg" style="width: 100%;" class="swiper-lazy attachment-full-slider size-full-slider" alt="" decoding="async" data-srcset="https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORD-PROTECT-1920x728.jpg 1920w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORD-PROTECT-300x114.jpg 300w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORD-PROTECT-1024x388.jpg 1024w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORD-PROTECT-768x291.jpg 768w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORD-PROTECT-1536x583.jpg 1536w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORD-PROTECT-2048x777.jpg 2048w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORD-PROTECT-500x190.jpg 500w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORD-PROTECT-1250x474.jpg 1250w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORD-PROTECT-1500x569.jpg 1500w" sizes="(max-width: 1920px) 100vw, 1920px" />																	</div>
+								<div class="swiper-lazy-preloader"></div>
+							</div>
+													<div class="swiper-slide">
+								<div class="head-item full">
+									<img width="1920" height="728" data-src="https://www.brenson.com.ar/wp-content/uploads/2021/11/Slider_Posventa_PickupDelivery_1500x569px-1920x728.jpg" style="width: 100%;" class="swiper-lazy attachment-full-slider size-full-slider" alt="" decoding="async" data-srcset="https://www.brenson.com.ar/wp-content/uploads/2021/11/Slider_Posventa_PickupDelivery_1500x569px-1920x728.jpg 1920w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Slider_Posventa_PickupDelivery_1500x569px-300x114.jpg 300w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Slider_Posventa_PickupDelivery_1500x569px-1024x389.jpg 1024w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Slider_Posventa_PickupDelivery_1500x569px-768x291.jpg 768w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Slider_Posventa_PickupDelivery_1500x569px-1536x583.jpg 1536w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Slider_Posventa_PickupDelivery_1500x569px-2048x777.jpg 2048w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Slider_Posventa_PickupDelivery_1500x569px-500x190.jpg 500w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Slider_Posventa_PickupDelivery_1500x569px-1250x474.jpg 1250w, https://www.brenson.com.ar/wp-content/uploads/2021/11/Slider_Posventa_PickupDelivery_1500x569px-1500x569.jpg 1500w" sizes="(max-width: 1920px) 100vw, 1920px" />																	</div>
+								<div class="swiper-lazy-preloader"></div>
+							</div>
+											</div>
+					<div class="swiper-pagination head-content-pagination"></div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</article>
+			</div>
+
+			<!-- <div class="page-head--content">
+									<div class="head-item full">
+						<img data-lazy="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/tumba.php?w=1500&q=65&src=https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORDPASS-1920x728.jpg" alt="">
+						
+											</div>
+									<div class="head-item full">
+						<img data-lazy="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/tumba.php?w=1500&q=65&src=https://www.brenson.com.ar/wp-content/uploads/2021/11/Banner_FORD-PROTECT-1920x728.jpg" alt="">
+						
+											</div>
+									<div class="head-item full">
+						<img data-lazy="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/tumba.php?w=1500&q=65&src=https://www.brenson.com.ar/wp-content/uploads/2021/11/Slider_Posventa_PickupDelivery_1500x569px-1920x728.jpg" alt="">
+						
+											</div>
+							</div> -->
+
+
+			<!-- FORMULARIO -->
+								<div  class="form-box--collapse form-box--center">
+						<div class="collapse" id="mainCollapse">
+							<div class="collapse-content">
+								<div class="form-box">
+									<form action="https://www.brenson.com.ar/servicio/" method="POST" class="FormVehiculo js-recaptcha" id="FormVehiculo" data-sales="Vendas" data-tecnom-sales="atc" data-sendcrm="Si">
+
+    <input type="hidden" name="SendMail" value="Si">
+
+    <input type="hidden" value="103" name="post-id">
+
+    <input type="hidden" value="103" name="vehiculo[forms_ford_id]">
+
+    <input type="hidden" name="vehiculo[name]" value="Servicio">
+
+    <input required type="text" placeholder="Nombre*" name="vehiculo[nombre]" value="">
+
+    <input required type="email" placeholder="Email*" name="vehiculo[email]" value="">
+
+    <input type="text" placeholder="Teléfono*" required name="vehiculo[telefono]" value="">
+
+    
+
+        <select name="vehiculo[sucursal]" class="">
+
+            <option value="">Elegir Sucursal</option><option value="Digital" data-tecnom-email="webmaster@divit.com.ar" data-salesforce="81420001">Digital</option><option value="Recova" data-tecnom-email="webmaster@divit.com.ar" data-salesforce="81420001">Recova</option><option value="Vicente López" data-tecnom-email="webmaster@divit.com.ar" data-salesforce="81420001">Vicente López</option><option value="Bariloche" data-tecnom-email="webmaster@divit.com.ar" data-salesforce="81420001">Bariloche</option><option value="Casa Central Caballito" data-tecnom-email="webmaster@divit.com.ar" data-salesforce="81420001">Casa Central Caballito</option>
+
+        </select>
+
+    <textarea placeholder="Comentarios" name="vehiculo[comentarios]"></textarea>
+
+    <label for="check"><input id="check" type="checkbox" name="vehiculo[emails]"> Acepto recibir comunicaciones vía email y teléfono</label>
+
+    <label style="font-size: 11px">Este sitio está protegido por reCAPTCHA y se aplican la <a href="https://policies.google.com/privacy">política de privacidad</a> y <a href="https://policies.google.com/terms">términos del servicio</a> de Google.</label>
+
+    <footer>
+
+    <button type="submit" class="form-box-button btn-blue icon" ga-click ga-category="SERVICIO" ga-action="FORMULARIO" ga-action="VEHICULO-ENVIAR">ENVIAR <i class="fa fa-angle-right"></i></button>
+
+    </footer>
+
+    </form>
+																	</div>
+							</div>
+						</div>
+						<div class="form-box--btn">
+							<a class="btn-blue icon" data-toggle="collapse" href="#mainCollapse" role="button" aria-expanded="false" aria-controls="mainCollapse">Contáctanos <i class="fa fa-angle-up"></i></a>
+						</div>
+					</div>
+										<!-- FORMULARIO END -->
+
+		</header>
+
+
+
+            <div  class="row">
+                <div  class="col-md-12">
+                                    </div>
+            </div>
+
+            <div  class="page-turno--content mt-4">
+                <div  class="container">
+                    <div  class="row">
+                        <!--<div class="col-lg-12 page-content">-->
+
+
+                        
+                        <div class="col-lg-12 page-content">
+                            <div class="contenido container-fluid">
+<div  class="row">
+<div class="col-12 text-center mt-3">
+<h2 class="text-center">Conoce nuestros servicios posventa</h2>
+<p>Un nuevo concepto en nuestro servicio de postventa, desarrollado gracias a la atención especializada, la<br />
+mejor tecnología y la solución a los problemas de nuestros clientes.</p>
+<p class="mt-4"><strong> Brenson es la mejor opción para el mantenimiento de tu vehículo Ford. </strong></p>
+</div>
+</div>
+<div class="row no-gutters">
+<div class="col-6">
+<ul class="">
+<li>Mantenimiento programado y preventivo</li>
+<li>Cristaleria</li>
+<li>Chapa y Pintura</li>
+<li>Alineación y balanceo</li>
+</ul>
+</div>
+<div class="col-6">
+<ul class="">
+<li>Reparaciones mecánicas integrales</li>
+<li>Colocación de accesorios</li>
+<li>Asesoramiento técnico</li>
+<li>Embellecimiento exterior</li>
+</ul>
+</div>
+</div>
+<div class="row novedades text-center">
+<div class="col-12">Recorda que nuestros clientes BRENSON acceden a importantes beneficios.</div>
+</div>
+<div class="row sucursales mt-5">
+<div class="col-12 col-sm-3"><img decoding="async" src="../wp-content/uploads/2021/10/taller-caballito.png" alt="Sucursal" /></div>
+<div class="col-12 col-sm-3 no-padding">
+<h6>SUCURSAL CABALLITO</h6>
+<h6>Tel. 0810-122-0606</h6>
+<p><a class="btn-blue" style="background: #189332;" href="https://api.whatsapp.com/send/?phone=5491135723680&amp;text&amp;app_absent=0" target="blank" rel="noopener" data-contact_reason="whatsapp">CONTACTANOS</a></p>
+<h6>Av. Rivadavia 6111 &#8211; CABA</h6>
+</div>
+</div>
+<div class="row sucursales mt-5">
+<div class="col-12 col-sm-3"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Sucursal" data-lazy-src="../wp-content/uploads/2022/01/logo_brenson-1.png" /><noscript><img decoding="async" src="../wp-content/uploads/2022/01/logo_brenson-1.png" alt="Sucursal" /></noscript></div>
+<div class="col-12 col-sm-3 no-padding">
+<h6>SUCURSAL ZONA NORTE</h6>
+<h6>Tel. 0810-122-0606</h6>
+<p><a class="btn-blue" style="background: #189332;" href="https://api.whatsapp.com/send/?phone=5491167273286&amp;text&amp;app_absent=0" target="blank" rel="noopener" data-contact_reason="whatsapp">CONTACTANOS</a></p>
+<h6>Av. Mitre 364 &#8211; Vicente López</h6>
+</div>
+</div>
+<div class="flex-container">
+<div class="flex-item-left">
+<div class="row sucursales mt-5">
+<div class="col-12 col-sm-6"></div>
+<h6 class="col-12 col-sm-6 no-padding"></h6>
+<h6></h6>
+</div>
+</div>
+</div>
+</div>
+<p>Horarios de atención: Lunes a Viernes de 7:00 a 12.30 y 13.30 18:00hs.</p>
+<div class="row novedades text-center mt-5">
+<div class="col-12">
+<h2 class="text-center">Conoce nuestros servicios posventa</h2>
+<p>Nos caracterizamos por la excelente atención y la rápida solución de las necesidades de nuestros<br />
+clientes.</p>
+<p>En nuestros talleres podrás cuidar tu Ford y mantenerlo en perfectas condiciones, como si fuese siempre<br />
+un 0KM.</p>
+<p>Contamos con un equipo de profesionales con experiencia, capacitados en forma continua por Ford<br />
+Argentina, que trabajan con herramientas y equipos de diagnóstico de última generación desarrollados<br />
+especialmente para cada modelo de FORD.</p>
+</div>
+</div>
+                        </div>
+
+                                                    
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div  class="col-md-12">
+                                    </div>
+            </div>
+        </main>
+
+    
+    
+<footer  class="main-footer">
+  <div  class="container">
+    <div class="row">
+      <div class="col-md-2 col-sm-12 text-center order-md-1 order-1">
+                <a href="https://www.brenson.com.ar" class="logo">
+          <img width="500" height="145" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20145'%3E%3C/svg%3E" alt="Brenson" data-lazy-src="https://www.brenson.com.ar/wp-content/uploads/2021/10/cropped-logo_brenson-1.png"><noscript><img width="500" height="145" src="https://www.brenson.com.ar/wp-content/uploads/2021/10/cropped-logo_brenson-1.png" alt="Brenson"></noscript>
+          <!-- <img width="2500" height="937" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202500%20937'%3E%3C/svg%3E" alt="Brenson" data-lazy-src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/logo.svg"><noscript><img width="2500" height="937" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/img/logo.svg" alt="Brenson"></noscript> -->
+        </a>
+      </div>
+
+      <div class="col-lg-6 col-md-9 col-sm-12 text-center order-md-2 order-3">
+        <nav class="nav">
+          <ul id="menu-menu-2" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-693"><a href="/pickups_suvs/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Vehículos">Vehículos</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-paginasimple menu-item-33"><a href="https://www.brenson.com.ar/autos/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Autos">Autos</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-paginasimple menu-item-34"><a href="https://www.brenson.com.ar/pickups_suvs/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Pickups &#038; Suvs">Pickups &#038; Suvs</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-paginasimple menu-item-35"><a href="https://www.brenson.com.ar/utilitarios/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Utilitarios">Utilitarios</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-86"><a href="https://www.brenson.com.ar/plan-ovalo/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Plan ovalo">Plan ovalo</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-316"><a href="https://www.brenson.com.ar/modelos/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Modelos">Modelos</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-309"><a href="https://www.brenson.com.ar/que-es-plan-ovalo/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="¿Qué es Plan Ovalo?">¿Qué es Plan Ovalo?</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-140"><a href="/turno/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Posventa">Posventa</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-135"><a href="https://www.brenson.com.ar/turno/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Solicita turno">Solicita turno</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-103 current_page_item menu-item-347"><a href="https://www.brenson.com.ar/servicio/" aria-current="page" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Servicios">Servicios</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-209"><a href="https://www.brenson.com.ar/accesorio/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Accesorios">Accesorios</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146"><a href="https://www.brenson.com.ar/repuestos/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Repuestos">Repuestos</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-238"><a target="_blank" href="https://vehiculos.mercadolibre.com.ar/_CustId_141678357" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Usados">Usados</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-paginasimple menu-item-has-children menu-item-31"><a href="https://www.brenson.com.ar/quienes_somos/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Nuestra empresa">Nuestra empresa</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-167"><a href="https://www.brenson.com.ar/ventas-corporativas/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Ventas Corporativas">Ventas Corporativas</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-paginasimple menu-item-102"><a href="https://www.brenson.com.ar/quienes_somos/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Brenson">Brenson</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1225"><a href="https://taraborelli.hiringroom.com/jobs" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Sumate a Brenson">Sumate a Brenson</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-paginasimple menu-item-38"><a href="https://www.brenson.com.ar/contacto/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Contacto">Contacto</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-paginasimple menu-item-296"><a href="https://www.brenson.com.ar/contacto/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Sucursales">Sucursales</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1130"><a href="https://taraborellirentacar.com/" ga-click="true" ga-category="SERVICIO" ga-action="MENU" ga-label="Alquiler de Vehículos">Alquiler de Vehículos</a></li>
+</ul>        </nav>
+      </div>
+
+      <div class="col-lg-4 col-md-12 col-sm-12 text-center order-md-3 order-2">
+        <div class="social">
+          <a href='https://www.facebook.com/brensonoficial/' target='_blank' class='facebook'></a><a href='https://www.instagram.com/brensonoficial/' target='_blank' class='instagram'></a><a href='https://api.whatsapp.com/send?phone=5491158140000' target='_blank' class='whatsapp'></a><a href='https://www.linkedin.com/in/brenson-autos-s-a-0072b396?originalSubdomain=ar' target='_blank' class='linkedin'></a>        </div>
+      </div>
+    </div> 
+  </div>
+  <div  class="container-fluid">
+    
+      </div>
+</footer>
+
+
+
+<!-- Modal - Cotización -->
+<div  class="msg-input">
+  </div>
+
+<div  class="modal fade modal-consulta" id="modalSolicitar" tabindex="-1" role="dialog" aria-labelledby="modalSolicitarTitle" aria-hidden="true">
+  <div  class="modal-dialog modal-dialog-centered" role="document">
+    <div  class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Solicitar cotización de <b class="modelo-name"></b></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form action="" method="POST" class="js-form ModalCotizacionForm  js-recaptcha" data-sales="Ventas" data-tecnom-sales="convencional" data-sendcrm="Si">
+
+    <input type="hidden" name="SendMail" value="Si"><input type="hidden" name="codigo_analytics" value="archive_auto_codigo_analytics">
+
+    <input type="hidden" value="103" name="post-id">
+
+    <input type="hidden" value="103" name="modal_cotizacion[forms_ford_id]">
+
+    <input required name="modal_cotizacion[nombre]" type="text" placeholder="Nombre*" value="">
+
+    <input required name="modal_cotizacion[email]" type="email" placeholder="Email*" value="">
+
+    <input name="modal_cotizacion[telefono]" required type="text" placeholder="Teléfono*" value=""><input name="modal_cotizacion[chasis]" type="text" placeholder="chasis" value="">
+
+        <select name="modal_cotizacion[sucursal]" class="">
+
+            <option value="">Elegir Sucursal</option><option value="Digital" data-tecnom-email="webmaster@divit.com.ar" data-salesforce="81420001">Digital</option><option value="Recova" data-tecnom-email="webmaster@divit.com.ar" data-salesforce="81420001">Recova</option><option value="Vicente López" data-tecnom-email="webmaster@divit.com.ar" data-salesforce="81420001">Vicente López</option><option value="Bariloche" data-tecnom-email="webmaster@divit.com.ar" data-salesforce="81420001">Bariloche</option><option value="Casa Central Caballito" data-tecnom-email="webmaster@divit.com.ar" data-salesforce="81420001">Casa Central Caballito</option>
+
+        </select>
+
+    <select required name="modal_cotizacion[modelo]" class="form-modelo">
+
+    <option value="" class="initial">Modelo*</option>
+
+    <option value="Nueva F-150 Tremor" data-plan-sf="" data-modelo-tecnom="" data-year="" data-marca="Ford">Nueva F-150 Tremor</option><option value="Nuevo Mustang" data-plan-sf="" data-modelo-tecnom="" data-year="" data-marca="Ford">Nuevo Mustang</option><option value="Nueva Bronco" data-plan-sf="" data-modelo-tecnom="" data-year="" data-marca="Ford">Nueva Bronco</option><option value="Mustang Mach-E" data-plan-sf="" data-modelo-tecnom="" data-year="" data-marca="Ford">Mustang Mach-E</option><option value="Nueva Maverick" data-plan-sf="" data-modelo-tecnom="" data-year="" data-marca="Ford">Nueva Maverick</option><option value="Bronco Sport" data-plan-sf="" data-modelo-tecnom="" data-year="" data-marca="Ford">Bronco Sport</option><option value="Territory" data-plan-sf="" data-modelo-tecnom="" data-year="" data-marca="Ford">Territory</option><option value="Nueva Kuga Híbrida" data-plan-sf="" data-modelo-tecnom="" data-year="" data-marca="Ford">Nueva Kuga Híbrida</option><option value="Ranger" data-plan-sf="" data-modelo-tecnom="" data-year="" data-marca="Ford">Ranger</option><option value="Ranger Raptor" data-plan-sf="" data-modelo-tecnom="" data-year="" data-marca="Ford">Ranger Raptor</option><option value="F-150 LARIAT Híbrida" data-plan-sf="" data-modelo-tecnom="" data-year="" data-marca="Ford">F-150 LARIAT Híbrida</option><option value="Nueva F-150 Raptor" data-plan-sf="" data-modelo-tecnom="" data-year="" data-marca="Ford">Nueva F-150 Raptor</option><option value="Nueva Transit" data-plan-sf="" data-modelo-tecnom="" data-year="" data-marca="Ford">Nueva Transit</option>
+
+    </select>
+
+    <select required name="modal_cotizacion[version]" class="form-version">
+
+    <option value="" class="initial">Version*</option>
+
+    <option value="5.0L Coyote V8 4x4 AT" data-modelo="Nueva F-150 Tremor" data-sf="" data-version-tecnom="">5.0L Coyote V8 4x4 AT</option><option value="GT Performance" data-modelo="Nuevo Mustang" data-sf="" data-version-tecnom="">GT Performance</option><option value="Wildtrak" data-modelo="Nueva Bronco" data-sf="" data-version-tecnom="">Wildtrak</option><option value="GT PERFORMANCE" data-modelo="Mustang Mach-E" data-sf="" data-version-tecnom="">GT PERFORMANCE</option><option value="XLT" data-modelo="Nueva Maverick" data-sf="" data-version-tecnom="">XLT</option><option value="LARIAT FX4" data-modelo="Nueva Maverick" data-sf="" data-version-tecnom="">LARIAT FX4</option><option value="LARIAT HÍBRIDA" data-modelo="Nueva Maverick" data-sf="" data-version-tecnom="">LARIAT HÍBRIDA</option><option value="Big Bend" data-modelo="Bronco Sport" data-sf="" data-version-tecnom="">Big Bend</option><option value="Wildtrak" data-modelo="Bronco Sport" data-sf="" data-version-tecnom="">Wildtrak</option><option value="SEL" data-modelo="Territory" data-sf="" data-version-tecnom="">SEL</option><option value="Titanium" data-modelo="Territory" data-sf="" data-version-tecnom="">Titanium</option><option value="PLATINUM" data-modelo="Nueva Kuga Híbrida" data-sf="" data-version-tecnom="">PLATINUM</option><option value="BLACK" data-modelo="Ranger" data-sf="" data-version-tecnom="">BLACK</option><option value="XL CABINA DOBLE 4x2 DIESEL" data-modelo="Ranger" data-sf="" data-version-tecnom="">XL CABINA DOBLE 4x2 DIESEL</option><option value="XL CABINA DOBLE 4x4 DIESEL" data-modelo="Ranger" data-sf="" data-version-tecnom="">XL CABINA DOBLE 4x4 DIESEL</option><option value="XLS CABINA DOBLE 4x2 DIESEL" data-modelo="Ranger" data-sf="" data-version-tecnom="">XLS CABINA DOBLE 4x2 DIESEL</option><option value="XLS CABINA DOBLE 4x4 DIESEL" data-modelo="Ranger" data-sf="" data-version-tecnom="">XLS CABINA DOBLE 4x4 DIESEL</option><option value="XLT CABINA DOBLE 4x2 DIESEL AT" data-modelo="Ranger" data-sf="" data-version-tecnom="">XLT CABINA DOBLE 4x2 DIESEL AT</option><option value="XLT CABINA DOBLE 4x4 DIESEL" data-modelo="Ranger" data-sf="" data-version-tecnom="">XLT CABINA DOBLE 4x4 DIESEL</option><option value="Limited 4x4" data-modelo="Ranger" data-sf="" data-version-tecnom="">Limited 4x4</option><option value="Limited+ 4x4" data-modelo="Ranger" data-sf="" data-version-tecnom="">Limited+ 4x4</option><option value="CABINA DOBLE 4x4" data-modelo="Ranger Raptor" data-sf="" data-version-tecnom="">CABINA DOBLE 4x4</option><option value="3.5L PowerBoost V6" data-modelo="F-150 LARIAT Híbrida" data-sf="" data-version-tecnom="">3.5L PowerBoost V6</option><option value="Cabina Doble" data-modelo="Nueva F-150 Raptor" data-sf="" data-version-tecnom="">Cabina Doble</option><option value="Chasis" data-modelo="Nueva Transit" data-sf="" data-version-tecnom="">Chasis</option><option value="Van Mediana" data-modelo="Nueva Transit" data-sf="" data-version-tecnom="">Van Mediana</option><option value="Van Mediana TE" data-modelo="Nueva Transit" data-sf="" data-version-tecnom="">Van Mediana TE</option><option value="Van Larga TE" data-modelo="Nueva Transit" data-sf="" data-version-tecnom="">Van Larga TE</option><option value="Minibus" data-modelo="Nueva Transit" data-sf="" data-version-tecnom="">Minibus</option>
+
+    </select>
+
+    <textarea name="modal_cotizacion[comentarios]" placeholder="Comentarios"></textarea>
+
+    <label for="modal_check"><input  id="modal_check" name="modal_cotizacion[emails]" type="checkbox"> Acepto recibir comunicaciones vía email y teléfono</label>
+
+    <label style="font-size: 11px">Este sitio está protegido por reCAPTCHA y se aplican la <a href="https://policies.google.com/privacy">política de privacidad</a> y <a href="https://policies.google.com/terms">términos del servicio</a> de Google.</label>
+
+    <footer>
+
+        <button type="submit" class="form-box-button btn-blue icon" ga-click ga-category="SERVICIO" ga-action="COTIZACION">ENVIAR <i class="fa fa-angle-right"></i></button>
+
+        </footer>
+
+        </form>
+
+        <div class="col-md-12">
+                  </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal - Usados -->
+<div  class="msg-input">
+  </div>
+<!-- Modal - Contactanos -->
+<div  class="modal fade modal-usado" id="modalUsados" tabindex="-1" role="dialog" aria-labelledby="modalUsadosTitle" aria-hidden="true">
+  <div  class="modal-dialog modal-dialog-centered" role="document">
+    <div  class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Consulta de <b class="modelo-name"></b></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="" method="POST" class="js-form FormUsadosModal  js-recaptcha" data-sales="" data-tecnom-sales="Ventas" data-sendcrm="Si">
+
+    <input type="hidden" name="SendMail" value="Si"><input type="hidden" name="codigo_analytics" value="archive_usados_codigo_analytics">
+
+    <input type="hidden" value="103" name="post-id">
+
+    <input type="hidden" value="103" name="modal_usados[forms_ford_id]">
+
+    <input required name="modal_usados[nombre]" type="text" placeholder="Nombre*" value="">
+
+    <input required name="modal_usados[email]" type="email" placeholder="Email*" value="">
+
+    <input name="modal_usados[telefono]" required type="text" placeholder="Teléfono*" value="">
+
+        <select name="modal_usados[sucursal]" class="">
+
+            <option value="">Elegir Sucursal</option><option value="Digital" data-tecnom-email="webmaster@divit.com.ar" data-salesforce="81420001">Digital</option><option value="Recova" data-tecnom-email="webmaster@divit.com.ar" data-salesforce="81420001">Recova</option><option value="Vicente López" data-tecnom-email="webmaster@divit.com.ar" data-salesforce="81420001">Vicente López</option><option value="Bariloche" data-tecnom-email="webmaster@divit.com.ar" data-salesforce="81420001">Bariloche</option><option value="Casa Central Caballito" data-tecnom-email="webmaster@divit.com.ar" data-salesforce="81420001">Casa Central Caballito</option>
+
+        </select>
+
+    <select required name="modal_usados[modelo]" class="form-modelo">
+
+    <option value="" class="initial">Modelo*</option>
+
+    
+
+    </select>
+
+    <textarea name="modal_usados[comentarios]" placeholder="Comentarios"></textarea>
+
+    <label for="modal_usados_check"><input id="modal_usados_check" name="modal_usados[emails]" type="checkbox"> Acepto recibir comunicaciones vía email y teléfono</label>
+
+    <label style="font-size: 11px">Este sitio está protegido por reCAPTCHA y se aplican la <a href="https://policies.google.com/privacy">política de privacidad</a> y <a href="https://policies.google.com/terms">términos del servicio</a> de Google.</label>
+
+    <footer>
+
+    <button type="submit" class="form-box-button btn-blue icon" ga-click ga-category="SERVICIO" ga-action="COTIZACION-ENVIAR">ENVIAR <i class="fa fa-angle-right"></i></button>
+
+    </footer>
+
+    </form>      </div>
+    </div>
+  </div>
+</div>
+
+<a href="https://www.brenson.com.ar/terminos-y-condiciones" class="dvt-terminos-condiciones" target="_blank">
+        <small class="link">Términos y Condiciones</small>
+</a>
+
+
+ 
+
+  <a href="https://www.brenson.com.ar/libro-de-quejas" class="dvt-libro-quejas" target="_blank">
+      <small>
+		        	<span> | </span>
+				 Libro de quejas      </small>
+  </a>
+
+<link data-minify="1" rel="stylesheet" type="text/css" href="https://www.brenson.com.ar/wp-content/cache/min/1/npm/cookieconsent@3/build/cookieconsent.min.css?ver=1731351506"/>
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script> var site_name = 'BRENSON AUTOS S.A.';</script>
+<script> var terminos_pdf = '/politica-de-cookies';</script>
+<script> var bar_color = '#006ece';</script>
+<script> var button_color = 'white';</script>
+<script> window.cookieconsent.initialise({
+    "palette": {
+      "popup": {"background": bar_color, "text": "#ffffff"},
+      "button": {"background": button_color, "text": "#000000"}
+    },
+    "content": {
+      "message": site_name + " utiliza cookies con diversos fines. Con ello nos proponemos facilitarte el uso de nuestra página web. Además, las cookies nos permiten mostrarte contenidos y publicidad adecuados a tus preferencias de uso. Continuar con la navegación implica aceptar nuestra política de cookies.",
+      "dismiss": "Continuar navegando",
+      "link": "Política de Cookies",
+      "href": terminos_pdf,
+      "target": "_blank"
+    }
+  });
+</script>
+<!-- HFCM by 99 Robots - Snippet # 5: Google Tag Manager (noscript) -->
+<!--PROPIO TARABORELLI 11/11/22 -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NNPF7F"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- /end HFCM by 99 Robots -->
+
+<div  class="joinchat joinchat--right joinchat--btn" data-settings='{"telephone":"5491158140000","mobile_only":false,"button_delay":3,"whatsapp_web":false,"qr":false,"message_views":2,"message_delay":-10,"message_badge":false,"message_send":"","message_hash":""}'>
+	<div  class="joinchat__button">
+		<div  class="joinchat__button__open"></div>
+									</div>
+	</div>
+<script type="text/javascript" id="rocket-browser-checker-js-after">
+/* <![CDATA[ */
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/contacto\/|\/sucursales\/digital\/|\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.brenson.com.ar","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-after">
+/* <![CDATA[ */
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/wp-forms-ford/includes/wp_forms_ford.js?ver=6.7&#039; defer data-defer=&#039;true" id="wp_forms_ford-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/plugins/creame-whatsapp-me/public/js/joinchat.min.js?ver=5.1.8&#039; defer data-defer=&#039;true" id="joinchat-js"></script>
+<script type="text/javascript" src="https://www.brenson.com.ar/wp-content/themes/ford-theme-2021/js/header-pages.js?ver=6.7&#039; defer data-defer=&#039;true" id="header-pages-js"></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.brenson.com.ar/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>
+
+</body>
+
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1731505725 -->

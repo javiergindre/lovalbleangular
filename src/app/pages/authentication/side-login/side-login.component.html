@@ -1,0 +1,126 @@
+<div class="blank-layout-container justify-content-center">
+  <div class="position-relative row w-100 h-100">
+    <div class="col-lg-7 col-xl-8 bg-gredient p-0">
+      <div class="p-24 h-100">
+        <!-- @if(options.theme === 'light') {
+        <a [routerLink]="['/dashboards/dashboard1']">
+          <img
+            src="./assets/images/logos/premedicsmall.png"
+            class="align-middle m-2"
+            alt="logo"
+          />
+        </a>
+        } @if(options.theme === 'dark') {
+        <a [routerLink]="['/dashboards/dashboard1']">
+          <img
+            src="./assets/images/logos/premedicsmall.png"
+            class="align-middle m-2"
+            alt="logo"
+          />
+        </a>
+        } -->
+
+        <div
+          class="align-items-center justify-content-center img-height d-none d-lg-flex"
+        >
+          <img
+            [src]="tenantSettings.settings.logo"
+            alt="login"
+            style="max-width: 500px"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5 col-xl-4 p-0">
+      <div
+        class="p-32 d-flex align-items-start align-items-lg-center justify-content-center h-100"
+      >
+        <div class="row justify-content-center w-100">
+          <div class="col-lg-9 max-width-form">
+            <h4 class="f-w-700 f-s-24 m-0">
+              Bienvenido a {{ tenantSettings.name }}
+            </h4>
+            <form class="m-t-30" [formGroup]="form" (ngSubmit)="submit()">
+              <mat-form-field
+                appearance="outline"
+                class="w-100"
+                color="primary"
+              >
+              <mat-label 
+                >Usuario</mat-label
+              >
+                <input matInput formControlName="username" />
+                @if(f['username'].touched && f['username'].invalid) {
+                <mat-hint class="m-b-16 error-msg">
+                  @if(f['username'].errors && f['username'].errors['required'])
+                  {
+                  <div class="text-error">El campo nombre es requerido.</div>
+                  } @if(f['username'].errors && f['username'].errors['email']){
+
+                  <div class="text-error">Debe ingresar un email válido.</div>
+                  }
+                </mat-hint>
+                }
+              </mat-form-field>
+
+              <!-- password -->
+              <mat-form-field
+                appearance="outline"
+                class="w-100"
+                color="primary"
+              >
+              <mat-label
+                >Contraseña</mat-label
+              >
+                <input matInput type="password" formControlName="password" />
+                @if(f['password'].touched && f['password'].invalid) {
+                <mat-hint class="m-b-16 error-msg">
+                  @if( f['password'].errors && f['password'].errors['required'])
+                  {
+                  <div class="text-error">El campo contraseña es requerido.</div>
+                  } @if(f['password'].errors &&
+                  f['password'].errors['minlength']) {
+                  <div class="text-error">La contraseña debe tener al menos 6 caracteres.</div>
+                  }
+                </mat-hint>
+                }
+              </mat-form-field>
+
+              <div class="d-flex align-items-center m-b-12">
+                <!-- <mat-checkbox color="primary">
+                  Remember this Device
+                </mat-checkbox> -->
+                <a
+                  [routerLink]="['/auth/forgot-pwd']"
+                  class="text-primary f-w-600 text-decoration-none f-s-14"
+                  >¿Olvidaste la contraseña?</a
+                >
+              </div>
+              <button
+                mat-flat-button
+                [disabled]="!form.valid"
+                color="primary"
+                class="w-100"
+              >
+                Ingresar
+              </button>
+              @if (showLoader) {
+              <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+              }
+              <!-- input -->
+            </form>
+            <span class="d-block f-w-500 d-block m-t-24"
+              >¿Eres nuevo?
+              <a
+                [routerLink]="['/auth/register']"
+                class="text-decoration-none text-primary f-w-500 f-s-14"
+              >
+                Crear cuenta</a
+              >
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

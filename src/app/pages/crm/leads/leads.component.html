@@ -1,0 +1,155 @@
+<mat-card class="cardWithShadow">
+  <mat-card-content class="p-24">
+    <div class="row justify-content-between">
+      <mat-form-field appearance="outline" class="select-custom">
+        <mat-select (selectionChange)="onWorkFlowChange($event.value)" [(value)]="selectedWorkFlowId">
+          <mat-option *ngFor="let workflow of workFlows" [value]="workflow.workflowId">
+            {{ workflow.workflowName }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="col-lg-4 d-flex align-items-center justify-content-end">
+        <button mat-button color="warn" class="m-r-10" (click)="clearFilters()">
+          Limpiar filtros
+        </button>
+        <button mat-stroked-button color="primary" (click)="onSearch()" class="mr-2">
+          Buscar
+        </button>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-accordion>
+
+    <mat-expansion-panel #expansionPanel class="shadow-none">
+      <mat-expansion-panel-header>
+        <mat-panel-description class="mat-body-1">
+          <i-tabler name="adjustments-alt" class="icon-20 m-r-12"></i-tabler>
+          Filtros avanzados
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div class="row">
+        <div class="col-3">
+          <mat-form-field appearance="outline" class="w-100 hide-hint">
+            <input matInput placeholder="Buscar por DNI" [(ngModel)]="filter.personCode" (keyup.enter)="onSearch()" />
+            <mat-icon matSuffix>
+              <i-tabler name="search" class="icon-20"></i-tabler>
+            </mat-icon>
+          </mat-form-field>
+        </div>
+        <div class="col-3">
+          <mat-form-field appearance="outline" color="primary" class="w-100">
+            <mat-label>Nombre</mat-label>
+            <input matInput [(ngModel)]="filter.personFirstName" (keyup.enter)="onSearch()" />
+          </mat-form-field>
+        </div>
+        <div class="col-3">
+          <mat-form-field appearance="outline" color="primary" class="w-100">
+            <mat-label>Apellido</mat-label>
+            <input matInput [(ngModel)]="filter.personLastName" (keyup.enter)="onSearch()" />
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-card>
+
+
+@if(selectedWorkFlowId != -1){
+
+<app-generic-pagination-table [data$]="filteredData$" [isLoading$]="isLoading$" [columns]="columns"
+  title="Lista de leads" subtitle="" [expandable]="true" [tabOptions]="tabOptions"
+  [userRole]="isProvider ? 'provider' : 'non-provider'" (pageChange)="onPageChange($event)"
+  (tabChange)="onTabChange($event)" [showCreateButton]="false">
+  <ng-template #expandedContent let-element>
+    <div class="container-data" >
+      <div class="w-50 mt-5">
+        @for (item of getParsedFields(element.formResponseFields); track item) {
+        @if (item.Type === 'date') {
+
+        <p>{{ item.Name }} : {{ item.Value | date: 'medium' }}</p>
+
+        } @else {
+
+        <p>{{ item.Name }} : {{ item.Value }}</p>
+
+        }
+        }
+
+        @if (this.filter.WorkflowActivitiesGroupId === 0){
+        <button mat-stroked-button color="primary" class="m-r-10" (click)="approve(element.id)">
+          Aprobar
+        </button>
+        <button mat-stroked-button color="warn" class="m-r-10" (click)="reject(element.id)">
+          Rechazar
+        </button>
+        }@else{
+        <!-- <mat-form-field>
+            <mat-select [(value)]="element.selectedOption" placeholder="Seleccionar acción" (selectionChange)="onOptionSelected(element,$event.value)">
+              <mat-option *ngFor="let option of setActivityOptions" [value]="option.id">
+                {{ option.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field> -->
+        @if(!isFinalCurrentTab){
+        <button mat-button [matMenuTriggerFor]="actionMenu" (click)="toogleExpandedElement()" class="action-button">
+          <span>Acciones</span>
+          <mat-icon>
+            {{
+            expandedElement
+            ? "keyboard_arrow_up"
+            : "keyboard_arrow_down"
+            }}
+          </mat-icon>
+        </button>
+
+        <mat-menu #actionMenu="matMenu" (closed)="toogleExpandedElement()" class="custom-menu">
+          <button mat-menu-item *ngFor="let option of setActivityOptions" (click)="onOptionSelected(element, option.id)"
+            class="custom-menu-item">
+            {{ option.name }}
+          </button>
+          <div class="custom-menu-item-divider"></div>
+          <button mat-menu-item (click)="reject(element.id)" class="custom-menu-item-reject">
+            Rechazar
+          </button>
+
+        </mat-menu>
+        }
+
+        }
+
+      </div>
+
+      <div class="container-comment" style="width: 100%;">
+        <mat-card-content class="p-0 flex ">
+          <mat-card class="shadow-none">
+            <mat-card-content class="p-0">
+              <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+                <mat-tab label="Comentarios">
+                  <app-messages-leads [entityType]="1" [id]="element.id"></app-messages-leads>
+                </mat-tab>
+                <mat-tab label="Evento">
+                  <app-list-events [entityType]="1" [entityId]="element.id"></app-list-events>
+                </mat-tab>
+              </mat-tab-group>
+            </mat-card-content>
+          </mat-card>
+        </mat-card-content>
+      </div>
+
+
+    </div>
+  </ng-template>
+</app-generic-pagination-table>
+}@else {
+<mat-card color="warn">
+  <mat-card-content class="mat-body-1" style="display: flex; align-items: center;">
+    <mat-icon color="warn">error</mat-icon>
+    <span style="margin-left: 8px;">
+      Su usuario no tiene permisos para listar <em>leads</em>.
+    </span>
+  </mat-card-content>
+</mat-card>
+
+}

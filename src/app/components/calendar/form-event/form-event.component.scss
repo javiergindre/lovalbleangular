@@ -1,0 +1,34 @@
+.wider-card {
+    max-width: 80%;
+    width: 100%;
+  }
+  
+
+  .container-form{
+    display: flex;
+    justify-content: center;
+  }
+
+  .container-calenders{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+
+  .transparent-backdrop {
+    background: rgba(0, 0, 0, 0); /* Fondo completamente transparente */
+  }
+  
+  .transparent-dialog .mat-dialog-container {
+    background-color: transparent; /* Hacer que el fondo del panel sea transparente */
+    box-shadow: none; /* Eliminar la sombra */
+    border: none; /* Quitar el borde si es necesario */
+  }
+  
+  .transparent-dialog {
+    backdrop-filter: none; /* Elimina cualquier filtro de desenfoque */
+  }
+  

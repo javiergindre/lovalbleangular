@@ -1,0 +1,262 @@
+@if(loadingStateService.isLoading$ | async){
+<div class="loading-overlay">
+  <div class="spinner-container">
+    <mat-progress-bar
+      mode="indeterminate"
+      diameter="20"
+      style="width: 70%"
+    ></mat-progress-bar>
+  </div>
+</div>
+}
+
+<mat-sidenav-container
+  class="mainWrapper"
+  autosize
+  autoFocus
+  [ngClass]="{
+    'sidebarNav-mini':
+      options.sidenavCollapsed && options.navPos !== 'top' && !resView,
+    'sidebarNav-horizontal': options.horizontal,
+    cardBorder: options.cardBorder,
+    orange_theme: options.activeTheme == 'orange_theme',
+    blue_theme: options.activeTheme == 'blue_theme',
+    aqua_theme: options.activeTheme == 'aqua_theme',
+    purple_theme: options.activeTheme == 'purple_theme',
+    green_theme: options.activeTheme == 'green_theme',
+    cyan_theme: options.activeTheme == 'cyan_theme'
+  }"
+  [dir]="options.dir!"
+>
+  <!-- ============================================================== -->
+  <!-- Vertical Sidebar -->
+  <!-- ============================================================== -->
+  @if (!options.horizontal) {
+  <mat-sidenav
+    #leftsidenav
+    [mode]="isOver ? 'over' : 'side'"
+    [opened]="
+      options.navPos === 'side' && options.sidenavOpened && !isOver && !resView
+    "
+    (openedChange)="onSidenavOpenedChange($event)"
+    (closedStart)="onSidenavClosedStart()"
+    class="sidebarNav"
+  >
+    <div class="flex-layout">
+      <app-sidebar
+        (toggleMobileNav)="sidenav.toggle()"
+        [showToggle]="isOver"
+      ></app-sidebar>
+      <ng-scrollbar class="position-relative" style="height: 100%">
+        <mat-nav-list class="sidebar-list">
+          @if(navItems){ @for(item of navItems; track $index){
+          @if(item.children){
+          <app-nav-item [item]="item" (notify)="sidenav.toggle()">
+          </app-nav-item>
+          } } }
+          <!-- @for(item of navItems; track item) {
+          <app-nav-item [item]="item" (notify)="sidenav.toggle()">
+          </app-nav-item>
+          } -->
+        </mat-nav-list>
+      </ng-scrollbar>
+      <div class="p-24 m-t-auto profile-bar">
+        <div class="bg-light-accent d-flex align-items-center rounded p-16">
+          @if(showInitials){
+          <div
+            class="d-flex justify-content-center align-items-center"
+            width="95"
+          >
+            <button mat-fab color="primary">
+              <b class="f-s-20">{{ initials }}</b>
+            </button>
+          </div>
+          } @if(personName | async; as personName){
+          <div class="m-l-16">
+            <h4 class="mat-subtitle-2 f-w-600">{{ personName }}</h4>
+            <!-- <span class="f-s-12">Designer</span> -->
+          </div>
+          }
+          <div class="m-l-auto">
+            <a
+              mat-icon-button
+              (click)="logout()"
+              class="d-flex justify-content-center"
+            >
+              <i-tabler
+                name="power"
+                class="text-primary icon-18 d-flex"
+              ></i-tabler>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-sidenav>
+  }
+  <!-- ============================================================== -->
+  <!-- Main Content -->
+  <!-- ============================================================== -->
+  <mat-sidenav-content class="contentWrapper" #content>
+    <!-- ============================================================== -->
+    <!-- VerticalHeader -->
+    <!-- ============================================================== -->
+
+    <app-header
+      [showToggle]="!isOver"
+      [menuItems]="menuItems"
+      (toggleCollapsed)="toggleCollapsed()"
+      (toggleMobileNav)="sidenav.toggle()"
+      (changeNavItems)="changeSideMenu($event)"
+      (toggleMobileFilterNav)="filterNavRight.toggle()"
+    ></app-header>
+
+    <main
+      class="pageWrapper"
+      [ngClass]="{
+        maxWidth: options.boxed
+      }"
+    >
+      <app-breadcrumb></app-breadcrumb>
+      <!-- ============================================================== -->
+      <!-- Outlet -->
+      <!-- ============================================================== -->
+      <router-outlet></router-outlet>
+      <div class="customizerBtn" *ngIf="skinDev">
+        <button mat-fab color="primary" (click)="customizerRight.toggle()">
+          <!-- <mat-icon>settings</mat-icon> -->
+          <b class="f-w-600 f-s-20">AI</b>
+        </button>
+      </div>
+    </main>
+  </mat-sidenav-content>
+
+  <mat-sidenav #customizerRight mode="over" position="end">
+    <div
+      class="p-x-16 p-y-20 d-flex align-items-center justify-content-between"
+    >
+      <h3 class="mat-subtitle-1 f-s-21 f-w-600">Arvent AI</h3>
+      <button class="d-lg-none" mat-button (click)="customizerRight.toggle()">
+        Close
+      </button>
+    </div>
+    <mat-divider></mat-divider>
+
+    <app-arvent-ai (optionsChange)="receiveOptions($event)"></app-arvent-ai>
+  </mat-sidenav>
+</mat-sidenav-container>
+
+<!-- ------------------------------------------------------------------
+  Mobile Apps Sidebar
+  ------------------------------------------------------------------ -->
+<mat-drawer #filterNavRight mode="over" position="end" class="filter-sidebar">
+  <div>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="branding">
+        @if(options.theme === 'light') {
+        <a href="/">
+          <img
+            src="./assets/images/logos/dark-logo.svg"
+            class="align-middle m-2"
+            alt="logo"
+          />
+        </a>
+        } @else {
+        <a href="/">
+          <img
+            src="./assets/images/logos/light-logo.svg"
+            class="align-middle m-2"
+            alt="logo"
+          />
+        </a>
+        }
+      </div>
+      <button
+        mat-icon-button
+        (click)="filterNavRight.toggle()"
+        class="d-flex justify-content-center"
+      >
+        <i-tabler name="x" class="icon-18 d-flex"></i-tabler>
+      </button>
+    </div>
+
+    <mat-accordion>
+      <mat-expansion-panel class="shadow-none">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="f-s-16 f-w-500"> Apps </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+          <div class="row">
+            @for (levelZeroItem of menuItems; track $index) { @if
+            (levelZeroItem.level == 0 && levelZeroItem.children){
+            <div class="col-sm-12 m-b-24 w-100">
+              <h4
+                class="f-s-14 f-w-600 m-0 textprimary mat-subtitle-1 hover-text"
+              >
+                {{ levelZeroItem.title }}
+              </h4>
+            </div>
+            <div class="">
+              @for (levelOneItem of levelZeroItem.children; track $index) {
+              @if(levelOneItem.children){
+              <div class="col-12 text-hover-primary">
+                <a
+                  (click)="changeSideMenu(levelOneItem)"
+                  (click)="filterNavRight.toggle()"
+                  class="d-flex align-items-center text-decoration-none m-b-24 gap-16 cursor-pointer"
+                >
+                  <button
+                    mat-mini-fab
+                    class="text-primary bg-light-primary shadow-none rounded"
+                  >
+                    <img
+                      src="/assets/images/svgs/icon-dd-lifebuoy.svg"
+                      width="20"
+                    />
+                  </button>
+
+                  <div>
+                    <h5
+                      class="f-s-14 f-w-600 m-0 textprimary mat-body-1 hover-text"
+                    >
+                      {{ levelOneItem.title }}
+                    </h5>
+                    <span class="mat-body-1 f-s-12">{{
+                      levelOneItem.description
+                    }}</span>
+                  </div>
+                </a>
+              </div>
+              } }
+            </div>
+            } }
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <div class="p-x-24">
+      <a
+        *ngIf="skinDev"
+        [routerLink]="['/apps/calendar']"
+        class="d-flex align-items-center text-decoration-none mat-body-1 p-y-16 gap-8"
+      >
+        <span class="f-s-15 f-w-500 m-l-8">Calendar</span>
+      </a>
+      <a
+        *ngIf="skinDev"
+        [routerLink]="['/apps/chat']"
+        class="d-flex align-items-center text-decoration-none mat-body-1 p-y-16"
+      >
+        <span class="f-s-15 f-w-500 m-l-8">Chat</span>
+      </a>
+      <a
+        *ngIf="skinDev"
+        [routerLink]="['/apps/email/inbox']"
+        class="d-flex align-items-center text-decoration-none mat-body-1 p-y-16 gap-8"
+      >
+        <span class="f-s-15 f-w-500 m-l-8">Email</span>
+      </a>
+    </div>
+  </div>
+</mat-drawer>

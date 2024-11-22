@@ -1,0 +1,52 @@
+<mat-card class="cardWithShadow">
+  <mat-card-content>
+    @for(event of listEvents; track event.title) {
+      <mat-list-item 
+        class="rounded m-b-8 bg-light-primary"
+        lines="4"
+        (click)="openDialog('Update', event)"
+      >
+        <div class="w-100 p-3">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex flex-column justify-content-center overflow-hidden" style="max-width: 60%;">
+              <h4 class="mat-subtitle-1 f-w-500 text-primary text-truncate mb-1">
+                {{ event.title }}
+              </h4>
+              <p class="f-s-14 f-w-400 text-truncate mb-0">
+                {{ event.description }}
+              </p>
+            </div>
+            <div class="d-flex align-items-center">
+              <span class="f-s-12 f-w-500 me-3">
+                {{ event.scheduleTime | date }}
+                {{ event.scheduleTime | date: 'HH:mm' }}
+              </span>
+             
+            </div>
+          </div>
+        </div>
+      </mat-list-item>
+    }
+    
+  </mat-card-content>
+  <div class="col-12 d-flex justify-content-end m-3">
+    <button mat-flat-button type="button" (click)="redirectCalendars()">
+      <mat-icon color="accent">visibility</mat-icon>
+    </button>
+    <button mat-flat-button (click)="openDialog('Add', {})">
+      <mat-icon color="green">add</mat-icon>
+    </button>
+  </div>
+  
+</mat-card>
+
+
+
+          <!-- <div class="action-buttons">
+                <button mat-icon-button (click)="openDialog('Update', event)" matTooltip="Edit">
+                  <i-tabler name="edit" class="icon-18"></i-tabler>
+                </button>
+                <button mat-icon-button (click)="openDialog('Delete', event)" matTooltip="Delete">
+                  <i-tabler name="trash" class="icon-18"></i-tabler>
+                </button>
+              </div> -->

@@ -1,0 +1,407 @@
+<mat-card class="cardWithShadow theme-card">
+  <mat-card-header>
+    <mat-card-title class="m-b-0">
+      @if(issuerName != null){ {{ issuerName }}
+      }@else { Factura de salud }
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="b-t-1">
+    <div class="row">
+      <div class="col-lg-4 col-12">
+        <form [formGroup]="healthInvoiceForm" (ngSubmit)="onSubmit()">
+          <!-- Fila 1: Afiliado -->
+          <div class="row">
+            <div class="col-12 mat-form-field">
+              <app-lookup
+                [config]="affiliateLookupConfig"
+                [formGroup]="healthInvoiceForm"
+                formControlName="affiliateCode"
+                (onSelect)="onAffiliateChange($event)"
+              ></app-lookup>
+            </div>
+          </div>
+
+          <!-- Fila 2: Práctica -->
+          <div class="row mt-3">
+            <div class="col-12 mat-form-field">
+              <app-lookup
+                [config]="productLookupConfig"
+                [formGroup]="healthInvoiceForm"
+                formControlName="productCode"
+                (onSelect)="onProductChange($event)"
+              ></app-lookup>
+            </div>
+          </div>
+
+          <!-- Fila 3: Cantidad Km -->
+          @if(isQuantityVisible){
+          <div class="row mt-3">
+            <div class="col-12">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Cantidad Km</mat-label>
+                <input
+                  matInput
+                  formControlName="quantity"
+                  step="0.01"
+                  type="number"
+                  (input)="onAmountInput($event)"
+                  (keydown)="preventEKey($event)"
+                  [readonly]="isViewMode && !isEditMode && !isApproveMode"
+                />
+                <mat-error *ngIf="isFieldIncomplete('quantity')">
+                  Ingrese una cantidad válida
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          }
+
+          <!-- Fila 4: Tipo de factura - Período -->
+          <div class="row mt-3">
+            <div class="col-lg-6 col-12 mb-3 mb-lg-0">
+              <app-lookup
+                [config]="taxConditionLookupConfigs"
+                [formGroup]="healthInvoiceForm"
+                formControlName="taxCondition"
+                (onSelect)="onTaxConditionChange($event)"
+              ></app-lookup>
+            </div>
+            <!-- <div class="col-lg-6 col-12 mb-3 mb-lg-0">
+              <div class="ng-select-wrapper">
+                <ng-select
+                  formControlName="taxCondition"
+                  [items]="taxConditionManager.items"
+                  [loading]="taxConditionManager.loading"
+                  [virtualScroll]="true"
+                  bindLabel="text"
+                  bindValue="id"
+                  placeholder="Tipo de factura"
+                  (scrollToEnd)="taxConditionManager.onScrollToEnd()"
+                  (change)="onTaxConditionChange($event)"
+                  [readonly]="isViewMode && !isEditMode && !isApproveMode"
+                  appearance="outline"
+                  class="ng-select-placeholder-float"
+                >
+                  <ng-template ng-option-tmp let-item="item">
+                    {{ item.text }}
+                  </ng-template>
+                </ng-select>
+                <label
+                  *ngIf="healthInvoiceForm.get('taxCondition')?.value"
+                  class="floating-placeholder"
+                  >Tipo de factura</label
+                >
+              </div>
+              <mat-error *ngIf="isFieldIncomplete('taxCondition')">
+                Seleccione un tipo de factura
+              </mat-error>
+            </div> -->
+
+            <div class="col-lg-6 col-12 mb-3 mb-lg-0">
+              <app-lookup
+                [config]="periodLookupConfig"
+                [formGroup]="healthInvoiceForm"
+                (onSelect)="onPeriodSelect($event)"
+                formControlName="period"
+                (keydown)="disableInput($event)"
+              ></app-lookup>
+            </div>
+          </div>
+
+          <!-- Fila 5: Punto de venta - Número de comprobante -->
+          <div class="row mt-3">
+            <div class="col-lg-6 col-12 mb-3 mb-lg-0">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Punto de venta</mat-label>
+                <input
+                  matInput
+                  formControlName="pointOfSale"
+                  (input)="formatPointOfSale($event)"
+                  maxlength="5"
+                  [readonly]="isViewMode && !isEditMode && !isApproveMode"
+                />
+                <mat-error *ngIf="isFieldIncomplete('pointOfSale')">
+                  Ingrese un punto de venta válido (5 dígitos)
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-6 col-12">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Número de comprobante</mat-label>
+                <input
+                  matInput
+                  formControlName="documentNumber"
+                  (input)="formatDocumentNumber($event)"
+                  maxlength="8"
+                  [readonly]="isViewMode && !isEditMode && !isApproveMode"
+                />
+                <mat-error *ngIf="isFieldIncomplete('documentNumber')">
+                  Ingrese un número de comprobante válido (8 dígitos)
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!-- Fila 6: Número de factura -->
+          <div class="row mt-3">
+            <div class="col-12">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Número de factura</mat-label>
+                <input matInput formControlName="number" readonly />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!-- Fila 7: Importe de factura - Fecha de emisión -->
+          <div class="row mt-3">
+            <div class="col-lg-6 col-12 mb-3 mb-lg-0">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Importe de factura</mat-label>
+                <input
+                  matInput
+                  type="number"
+                  formControlName="basicAmount"
+                  step="0.01"
+                  (input)="onAmountInput($event)"
+                  (keydown)="preventEKey($event)"
+                  [readonly]="isViewMode && !isEditMode && !isApproveMode"
+                />
+                <mat-error *ngIf="isFieldIncomplete('basicAmount')">
+                  Ingrese un importe válido
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-6 col-12">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Fecha de emisión</mat-label>
+                <input
+                  matInput
+                  [matDatepicker]="picker"
+                  formControlName="date"
+                  [readonly]="isViewMode && !isEditMode && !isApproveMode"
+                />
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="picker"
+                  [disabled]="isViewMode && !isEditMode && !isApproveMode"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="isFieldIncomplete('date')">
+                  Seleccione una fecha de emisión válida
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!-- Fila 8: CAE - Vencimiento CAE -->
+          <div class="row mt-3">
+            <div class="col-lg-6 col-12 mb-3 mb-lg-0">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>CAE</mat-label>
+                <input
+                  matInput
+                  type="text"
+                  formControlName="electronicAuthorizationNumber"
+                  [readonly]="isViewMode && !isEditMode && !isApproveMode"
+                  (input)="onCaeInput($event)"
+                  (keydown)="validateCaeInput($event)"
+                  maxlength="14"
+                />
+                <mat-error
+                  *ngIf="isFieldIncomplete('electronicAuthorizationNumber')"
+                >
+                  Ingrese un CAE válido
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-6 col-12">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Vencimiento CAE</mat-label>
+                <input
+                  matInput
+                  [matDatepicker]="voidPicker"
+                  formControlName="electronicAuthorizationVoidDate"
+                  [readonly]="isViewMode && !isEditMode && !isApproveMode"
+                />
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="voidPicker"
+                  [disabled]="isViewMode && !isEditMode && !isApproveMode"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #voidPicker></mat-datepicker>
+                <mat-error
+                  *ngIf="isFieldIncomplete('electronicAuthorizationVoidDate')"
+                >
+                  Seleccione una fecha de vencimiento válida
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <!-- Change dependency -->
+          @if(isApproveMode) {
+          <div class="row mt-3">
+            <div class="col-12 mb-3 mb-lg-0">
+              <mat-label>Dependencia</mat-label>
+              <mat-radio-group
+                [(ngModel)]="productRequireDependency"
+                formControlName="productRequireDependency"
+              >
+                <mat-radio-button
+                  *ngFor="let option of productDependencyOptions"
+                  [value]="option.value"
+                >
+                  {{ option.viewValue }}
+                </mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+          }
+          <!-- Fila: Archivos -->
+          <div class="row mt-3">
+            <div class="col-12">
+              <div class="d-flex align-items-center m-b-16">
+                @if (!isApproveMode) {
+                <button
+                  mat-flat-button
+                  color="primary"
+                  type="button"
+                  (click)="fileInput.click()"
+                  [disabled]="isViewMode && !isEditMode"
+                >
+                  <i-tabler name="upload" class="icon-20 m-r-8"></i-tabler>
+                  Seleccionar archivos PDF
+                </button>
+                <input
+                  type="file"
+                  #fileInput
+                  hidden
+                  multiple
+                  accept="application/pdf"
+                  (change)="onFileSelected($event)"
+                />
+                }
+              </div>
+            </div>
+            @if(!isApproveMode){ }
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-8 col-12 mt-3 mt-lg-0">
+        <mat-card class="cardWithShadow theme-card">
+          <mat-card-content>
+            @if (isLoadingFiles) {
+            <div
+              class="d-flex justify-content-center align-items-center"
+              style="height: 800px"
+            >
+              <mat-spinner diameter="50"></mat-spinner>
+            </div>
+            } @else if (selectedFiles.length > 0) {
+            <mat-tab-group animationDuration="0ms">
+              @for (file of selectedFiles; track file.name) {
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <span class="d-flex align-items-center">
+                    <span class="pdf-filename" [title]="file.name">{{
+                      getFileName(file.name)
+                    }}</span>
+                    @if (!isApproveMode) {
+                    <button
+                      mat-icon-button
+                      color="warn"
+                      type="button"
+                      (click)="removeFile(file, $event)"
+                      [disabled]="isViewMode && !isEditMode"
+                    >
+                      <i-tabler name="trash" class="icon-20"></i-tabler>
+                    </button>
+                    }
+                  </span>
+                </ng-template>
+                <div class="pdf-container">
+                  <iframe
+                    [src]="getSafeUrl(file)"
+                    width="100%"
+                    height="600px"
+                  ></iframe>
+                </div>
+              </mat-tab>
+              }
+            </mat-tab-group>
+            } @else {
+            <p class="text-center">No hay archivos PDF seleccionados</p>
+            }
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="b-t-1">
+    @if(isOnlyViewMode){
+    <button mat-flat-button color="accent" (click)="cancelAndGoBack()">
+      Volver
+    </button>
+    }@else {
+    <button mat-flat-button color="warn" (click)="cancelAndGoBack()">
+      Cancelar
+    </button>
+    @if (isViewMode && !isEditMode && !isApproveMode) {
+    <button
+      mat-flat-button
+      color="primary"
+      class="m-l-8"
+      [disabled]="!isInvoiceLoaded"
+      (click)="toggleEditMode()"
+    >
+      Editar
+    </button>
+    } @if ((!isViewMode && !isApproveMode) || isEditMode) {
+    <button
+      mat-flat-button
+      color="primary"
+      class="m-l-8"
+      (click)="onSubmit()"
+      [disabled]="!isFormValid()"
+    >
+      {{ isViewMode ? "Actualizar" : "Guardar" }}
+    </button>
+    } @if (isApproveMode) {
+    <button
+      mat-button
+      color="warn"
+      class="m-l-8"
+      (click)="reject()"
+      [disabled]="!isFormValid()"
+    >
+      Rechazar
+    </button>
+
+    <button
+      mat-flat-button
+      color="primary"
+      class="m-l-8"
+      (click)="approve()"
+      [disabled]="!isFormValid()"
+    >
+      Aprobar
+    </button>
+    } }
+
+    <!-- <button
+      mat-flat-button
+      color="primary"
+      class="m-l-8"
+      (click)="logInvalidControls(healthInvoiceForm)"
+    >
+      print errors
+    </button>
+    <button
+      mat-flat-button
+      color="primary"
+      class="m-l-8"
+      (click)="printValueForm()"
+    >
+      print value form
+    </button> -->
+  </mat-card-actions>
+</mat-card>

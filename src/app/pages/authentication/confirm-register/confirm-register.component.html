@@ -1,0 +1,89 @@
+<div class="blank-layout-container justify-content-center align-items-center">
+  <div
+    class="position-relative row w-100 h-100 bg-gredient justify-content-center"
+  >
+    <div class="col-lg-4 d-flex align-items-center">
+      <mat-card class="cardWithShadow boxed-auth">
+        <mat-card-content class="p-32">
+          <div class="text-center">
+            @if(options.theme === 'light') {
+            <img
+              [src]="tenantSettings.settings.logo"
+              class="align-middle m-2"
+              alt="logo"
+              width="200"
+            />
+            } @if(options.theme === 'dark') {
+            <img
+              [src]="tenantSettings.settings.logo"
+              class="align-middle m-2"
+              alt="logo"
+              width="200"
+            />
+            }
+          </div>
+          <div class="row m-t-24 custom-row">
+            <div class="col-12">
+              <h3>Bienvenido {{ personName }}!</h3>
+            </div>
+          </div>
+          <form [formGroup]="form" (ngSubmit)="submit()">
+            <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-32 d-block"
+              >Configura tu contraseña</mat-label
+            >
+            <div class="d-flex align-items-center"></div>
+            <!-- password -->
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <mat-label>Contraseña</mat-label>
+              <input matInput type="password" formControlName="password" />
+              @if(f['password'].touched && f['password'].invalid) {
+              <mat-hint class="m-b-16 error-msg">
+                @if( f['password'].errors && f['password'].errors['required']) {
+                <div class="text-error">El campo ontraseña es requerido.</div>
+                } @if(f['password'].errors && f['password'].errors['minlength'])
+                {
+                <div class="text-error">
+                  La contraseña debe tener al menos 6 caracteres.
+                </div>
+                }
+              </mat-hint>
+              }
+            </mat-form-field>
+            <!-- confirm password -->
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <mat-label>Confirmar contraseña</mat-label>
+              <input
+                matInput
+                type="password"
+                formControlName="confirmPassword"
+              />
+              @if(f['confirmPassword'].touched && f['confirmPassword'].invalid)
+              {
+              <mat-hint class="m-b-16 error-msg">
+                @if( f['confirmPassword'].errors &&
+                f['confirmPassword'].errors['required']) {
+                <div class="text-error">
+                  El campo confirmar contraseña es requerido.
+                </div>
+                } @if(f['confirmPassword'].errors &&
+                f['confirmPassword'].errors['minlength']) {
+                <div class="text-error">
+                  La contraseña debe tener al menos 6 caracteres.
+                </div>
+                } @if(f['confirmPassword'].errors &&
+                f['confirmPassword'].errors['passwordMismatch']) {
+                <div class="text-error">Las contraseñas no coinciden.</div>
+                }
+              </mat-hint>
+              }
+            </mat-form-field>
+            <button mat-flat-button color="primary" class="w-100">
+              Confirmar registro
+            </button>
+            <!-- input -->
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,199 @@
+<div class="blank-layout-container justify-content-center">
+  <div class="position-relative row w-100 h-100">
+    <div class="col-lg-7 col-xl-8 bg-gredient p-0">
+      <div class="p-24 h-100">
+        <!-- @if(options.theme === 'light') {
+        <a [routerLink]="['/dashboards/dashboard1']">
+          <img
+            src="./assets/images/logos/Osmmedt.png"
+            class="align-middle m-2"
+            alt="logo"
+          />
+        </a>
+        } @if(options.theme === 'dark') {
+        <a [routerLink]="['/dashboards/dashboard1']">
+          <img
+            src="./assets/images/logos/Osmmedt.png"
+            class="align-middle m-2"
+            alt="logo"
+          />
+        </a>
+        } -->
+
+        <div
+          class="align-items-center justify-content-center img-height d-none d-lg-flex"
+        >
+          <img
+            [src]="tenantSettings.settings.logo"
+            alt="login"
+            style="max-width: 500px"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5 col-xl-4 p-0">
+      <div
+        class="p-32 d-flex align-items-start align-items-lg-center justify-content-center h-100"
+      >
+        <div class="row justify-content-center w-100">
+          <div class="col-lg-9 max-width-form">
+            <h4 class="f-w-700 f-s-24 m-0">
+              Bienvenido a {{ tenantSettings.name }}
+            </h4>
+
+            <form class="m-t-30" [formGroup]="form" (ngSubmit)="submit()">
+              <!-- privder code -->
+              <mat-form-field
+                appearance="outline"
+                class="w-100"
+                color="primary"
+              >
+              <mat-label>CUIT del prestador</mat-label>
+                <input matInput formControlName="providerCode" />
+                @if(f['providerCode'].touched && f['providerCode'].invalid) {
+                <mat-hint class="m-b-16 error-msg">
+                  @if(f['providerCode'].errors &&
+                  f['providerCode'].errors['required']) {
+                  <div class="text-error">
+                    El CUIT del prestador es requerido.
+                  </div>
+                  }
+                </mat-hint>
+                }
+              </mat-form-field>
+
+              <!-- user person code -->
+              <mat-form-field
+                appearance="outline"
+                class="w-100"
+                color="primary"
+              >
+                <mat-label>DNI del usuario</mat-label>
+                <input matInput formControlName="userPersonCode" />
+                @if(f['userPersonCode'].touched && f['userPersonCode'].invalid)
+                {
+                <mat-hint class="m-b-16 error-msg">
+                  @if(f['userPersonCode'].errors &&
+                  f['userPersonCode'].errors['required']) {
+                  <div class="text-error">El DNI del usuario es requerido.</div>
+                  }
+                </mat-hint>
+                }
+              </mat-form-field>
+
+              <!-- name -->
+              <mat-form-field
+                appearance="outline"
+                class="w-100"
+                color="primary"
+              >
+                <mat-label>Nombre del usuario</mat-label>
+                <input matInput formControlName="userPersonFirstName" />
+                @if(f['userPersonFirstName'].touched &&
+                f['userPersonFirstName'].invalid) {
+                <mat-hint class="m-b-16 error-msg">
+                  @if(f['userPersonFirstName'].errors &&
+                  f['userPersonFirstName'].errors['required']) {
+                  <div class="text-error">
+                    El nombre del usuario es requerido.
+                  </div>
+                  }
+                </mat-hint>
+                }
+              </mat-form-field>
+
+              <!-- last name -->
+              <mat-form-field
+                appearance="outline"
+                class="w-100"
+                color="primary"
+              >
+                <mat-label>Apellido del usuario</mat-label>
+                <input matInput formControlName="userPersonLastName" />
+                @if(f['userPersonLastName'].touched &&
+                f['userPersonLastName'].invalid) {
+                <mat-hint class="m-b-16 error-msg">
+                  @if(f['userPersonLastName'].errors &&
+                  f['userPersonLastName'].errors['required']) {
+                  <div class="text-error">
+                    El apellido del usuario es requerido.
+                  </div>
+                  }
+                </mat-hint>
+                }
+              </mat-form-field>
+              <!-- email -->
+              <mat-form-field
+                appearance="outline"
+                class="w-100"
+                color="primary"
+              >
+                <mat-label>Correo Electrónico</mat-label>
+                <input matInput type="userEmail" formControlName="userEmail" />
+                @if(f['userEmail'].touched && f['userEmail'].invalid) {
+                <mat-hint class="m-b-16 error-msg">
+                  @if(f['userEmail'].errors &&
+                  f['userEmail'].errors['required']) {
+                  <div class="text-error">
+                    El email del usuario es requerido.
+                  </div>
+                  } @if(f['userEmail'].errors && f['userEmail'].errors['email'])
+                  {
+                  <div class="text-error">Debe ser un e-mail válido.</div>
+                  }
+                </mat-hint>
+                }
+              </mat-form-field>
+              <!-- email confirm -->
+              <mat-form-field
+                appearance="outline"
+                class="w-100"
+                color="primary"
+              >
+                <mat-label>Confirmar Correo Electrónico</mat-label>
+                <input
+                  matInput
+                  type="userEmailConfirm"
+                  formControlName="userEmailConfirm"
+                />
+                @if(f['userEmailConfirm'].touched &&
+                f['userEmailConfirm'].invalid) {
+                <mat-hint class="m-b-16 error-msg">
+                  @if(f['userEmailConfirm'].errors &&
+                  f['userEmailConfirm'].errors['required']) {
+                  <div class="text-error">
+                    El campo confirmación de email es requerido.
+                  </div>
+                  } @if(f['userEmailConfirm'].errors &&
+                  f['userEmailConfirm'].errors['emailMismatch']) {
+                  <div class="text-error">
+                    Las direcciones de e-mail no coinciden.
+                  </div>
+                  }@if(f['userEmailConfirm'].errors &&
+                  f['userEmailConfirm'].errors['email']) {
+                  <div class="text-error">Debe ser un e-mail válido.</div>
+                  }
+                </mat-hint>
+                }
+              </mat-form-field>
+              <button mat-flat-button color="primary" class="w-100">
+                Registrarse
+              </button>
+              <!-- input -->
+            </form>
+            <span class="d-block f-w-500 d-block m-t-24"
+              >¿Ya tiene una cuenta?
+
+              <a
+                [routerLink]="['/auth/login']"
+                class="text-decoration-none text-primary f-w-500 f-s-14"
+              >
+                Iniciar sesión</a
+              >
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+.container-comment {
+    max-height: 55vh;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.container-messages-leads {
+    display: flex;
+    flex-direction: column;
+    height: 45vh;
+}

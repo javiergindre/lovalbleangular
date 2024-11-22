@@ -1,0 +1,210 @@
+<mat-card class="cardWithShadow theme-card">
+  <mat-card-header>
+    <mat-card-title class="m-b-0">Registro de Paciente</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="b-t-1">
+    <mat-stepper orientation="vertical" #stepper>
+      <!-- Step 1: Información del Paciente -->
+      <mat-step [stepControl]="patientForm">
+        <form class="m-t-24" [formGroup]="patientForm">
+          <ng-template matStepLabel>Información del Paciente</ng-template>
+
+          <!-- Campos de Person -->
+          <mat-label class="mat-subtitle-2 f-w-600 d-block m-b-16"
+            >DNI</mat-label
+          >
+          <mat-form-field appearance="outline" class="w-100">
+            <input matInput formControlName="code" required />
+          </mat-form-field>
+
+          <div class="row">
+            <div class="col-6">
+              <mat-label class="mat-subtitle-2 f-w-600 d-block m-b-16"
+                >Nombre</mat-label
+              >
+              <mat-form-field appearance="outline" class="w-100">
+                <input matInput formControlName="firstName" required />
+              </mat-form-field>
+            </div>
+
+            <div class="col-6">
+              <mat-label class="mat-subtitle-2 f-w-600 d-block m-b-16"
+                >Apellido</mat-label
+              >
+              <mat-form-field appearance="outline" class="w-100">
+                <input matInput formControlName="lastName" required />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <mat-label class="mat-subtitle-2 f-w-600 d-block m-b-16"
+                >Género</mat-label
+              >
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-select formControlName="gender" required>
+                  <mat-option [value]="0">Masculino</mat-option>
+                  <mat-option [value]="1">Femenino</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div class="col-6">
+              <mat-label class="mat-subtitle-2 f-w-600 d-block m-b-16"
+                >Fecha de Nacimiento</mat-label
+              >
+              <mat-form-field appearance="outline" class="w-100">
+                <input
+                  matInput
+                  [matDatepicker]="picker"
+                  formControlName="birthDate"
+                  required
+                />
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="picker"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="text-right">
+            <button mat-flat-button color="primary" matStepperNext>
+              Siguiente
+            </button>
+          </div>
+        </form>
+      </mat-step>
+
+      <!-- Step 2: Financiador de Salud -->
+      <mat-step [stepControl]="patientForm">
+        <form class="m-t-24" [formGroup]="patientForm">
+          <ng-template matStepLabel>Financiador de Salud</ng-template>
+
+          <div class="row">
+            <div class="col-4">
+              <mat-label class="mat-subtitle-2 f-w-600 d-block m-b-16"
+                >Cobertura</mat-label
+              >
+              <app-lookup
+                [config]="privateHealthServiceLookupConfig"
+                [formGroup]="patientForm"
+                formControlName="privateHealthServiceId"
+              ></app-lookup>
+            </div>
+            <div class="col-4">
+              <mat-label class="mat-subtitle-2 f-w-600 d-block m-b-16"
+                >Plan</mat-label
+              >
+              <app-lookup
+                [config]="healthServicePlanLookupConfig"
+                [formGroup]="patientForm"
+                formControlName="HealthServicePlanId"
+              ></app-lookup>
+            </div>
+
+            <div class="col-4">
+              <mat-label class="mat-subtitle-2 f-w-600 d-block m-b-16"
+                >Afiliado</mat-label
+              >
+              <mat-form-field appearance="outline" class="w-100">
+                <input matInput formControlName="cardNumber" required />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <mat-label class="mat-subtitle-2 f-w-600 d-block m-b-16"
+            >Obra social</mat-label
+          >
+          <div class="row">
+            <div class="col-12">
+              <app-lookup
+                [config]="healthServiceIdLookupConfig"
+                [formGroup]="patientForm"
+                formControlName="HealthServiceId"
+              ></app-lookup>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between m-t-16">
+            <button mat-flat-button color="warn" matStepperPrevious>
+              Atrás
+            </button>
+            <button mat-flat-button color="primary" matStepperNext>
+              Siguiente
+            </button>
+          </div>
+        </form>
+      </mat-step>
+
+      <!-- Step 3: Datos de Contacto -->
+      <mat-step [stepControl]="patientForm">
+        <form class="m-t-24" [formGroup]="patientForm">
+          <ng-template matStepLabel>Datos de Contacto</ng-template>
+
+          <div class="row">
+            <div class="col-6">
+              <mat-label class="mat-subtitle-2 f-w-600 d-block m-b-16"
+                >Teléfono</mat-label
+              >
+              <mat-form-field appearance="outline" class="w-100">
+                <input matInput formControlName="phone" required />
+              </mat-form-field>
+            </div>
+            <div class="col-6">
+              <mat-label class="mat-subtitle-2 f-w-600 d-block m-b-16"
+                >Email</mat-label
+              >
+              <mat-form-field appearance="outline" class="w-100">
+                <input matInput formControlName="email" required />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <app-lookup
+                [config]="countryLookupConfig"
+                [formGroup]="patientForm"
+                formControlName="countryId"
+                [defaultValue]="2"
+              >
+              </app-lookup>
+            </div>
+            <div class="col-6">
+              <app-lookup
+                [config]="stateLookupConfig"
+                [formGroup]="patientForm"
+                formControlName="stateId"
+                [defaultValue]="1"
+              >
+              </app-lookup>
+            </div>
+          </div>
+
+          <mat-label class="mat-subtitle-2 f-w-600 d-block m-b-16"
+            >Dirección</mat-label
+          >
+          <mat-form-field appearance="outline" class="w-100">
+            <input matInput formControlName="address" required />
+          </mat-form-field>
+
+          <div class="d-flex align-items-center justify-content-between m-t-16">
+            <button mat-flat-button color="warn" matStepperPrevious>
+              Atrás
+            </button>
+            <button
+              mat-flat-button
+              color="primary"
+              (click)="onSubmit()"
+              [disabled]="!patientForm.valid"
+            >
+              Finalizar
+            </button>
+          </div>
+        </form>
+      </mat-step>
+    </mat-stepper>
+  </mat-card-content>
+</mat-card>

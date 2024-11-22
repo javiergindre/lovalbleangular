@@ -1,0 +1,18 @@
+
+@media (max-width: 768px) {
+  .container{
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+}
+
+mat-form-field .mat-form-field-suffix {
+  margin-left: 0;  /* Elimina el margen predeterminado */
+  padding-left: 4px;  /* Añade un pequeño espacio entre el texto del input y el sufijo */
+  align-self: center;  /* Asegura que el sufijo esté alineado verticalmente */
+}
+
+.mat-mdc-form-field-hint-wrapper, .mat-mdc-form-field-error-wrapper{
+  position: inherit !important;
+  top: -15px !important;
+}
